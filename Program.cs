@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Texel.Classes.Input;
+using Texel.Classes.Tools;
 
 namespace Texel
 {
@@ -17,6 +19,7 @@ namespace Texel
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+
         }
     }
 }

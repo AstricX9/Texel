@@ -44,7 +44,9 @@
             this.pixelCanvasControl1.CurrentTool = Texel.ToolMode.Pen;
             this.pixelCanvasControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pixelCanvasControl1.Location = new System.Drawing.Point(0, 0);
+            this.pixelCanvasControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pixelCanvasControl1.Name = "pixelCanvasControl1";
+            this.pixelCanvasControl1.PanOffset = new System.Drawing.Point(0, 0);
             this.pixelCanvasControl1.SelectedColor = System.Drawing.Color.Black;
             this.pixelCanvasControl1.Size = new System.Drawing.Size(800, 450);
             this.pixelCanvasControl1.TabIndex = 0;
@@ -57,6 +59,7 @@
             this.Controls.Add(this.toolWindowControl1);
             this.Controls.Add(this.pixelCanvasControl1);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);

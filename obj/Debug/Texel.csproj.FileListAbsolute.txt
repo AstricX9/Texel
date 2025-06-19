@@ -11,6 +11,7 @@ C:\Users\danie\source\repos\Texel\Texel\obj\Debug\Texel.exe.config
 C:\Users\danie\source\repos\Texel\Texel\obj\Debug\Texel.MainForm.resources
 C:\Users\danie\source\repos\Texel\Texel\obj\Debug\Texel.ToolWindowControl.resources
 C:\Users\danie\source\repos\Texel\Texel\obj\Debug\Texel.PixelCanvasControl.resources
+F:\Dev\Texel\Texel\bin\Debug\Classes\IDrawingTool.cs
 F:\Dev\Texel\Texel\bin\Debug\Texel.exe.config
 F:\Dev\Texel\Texel\bin\Debug\Texel.exe
 F:\Dev\Texel\Texel\bin\Debug\Texel.pdb

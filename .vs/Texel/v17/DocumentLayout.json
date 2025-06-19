@@ -7,12 +7,60 @@
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|f:\\dev\\texel\\texel\\usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\classes\\tools\\selecttool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\tools\\selecttool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|f:\\dev\\texel\\texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\classes\\tools\\erasertool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\tools\\erasertool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\classes\\tools\\rectangletool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\tools\\rectangletool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\classes\\tools\\ellipsetool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\tools\\ellipsetool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|f:\\dev\\texel\\texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\classes\\idrawingtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\idrawingtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\classes\\tools\\pentool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\tools\\pentool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\classes\\tools\\filltool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\tools\\filltool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\classes\\input\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\input\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|F:\\Dev\\Texel\\Texel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +70,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PixelCanvasControl.cs",
-              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
-              "RelativeDocumentMoniker": "UserControls\\PixelCanvasControl.cs",
-              "ToolTip": "F:\\Dev\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
-              "RelativeToolTip": "UserControls\\PixelCanvasControl.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAA9wIkAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "SelectTool.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\SelectTool.cs",
+              "RelativeDocumentMoniker": "Classes\\Tools\\SelectTool.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\SelectTool.cs",
+              "RelativeToolTip": "Classes\\Tools\\SelectTool.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAD4vyAAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:12:49.985Z",
+              "WhenOpened": "2025-06-19T09:15:56.375Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PixelCanvasControl.cs [Design]",
               "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
               "RelativeDocumentMoniker": "UserControls\\PixelCanvasControl.cs",
@@ -51,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
@@ -60,6 +108,161 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T06:10:27.712Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:42:18.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EllipseTool.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\EllipseTool.cs",
+              "RelativeDocumentMoniker": "Classes\\Tools\\EllipseTool.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\EllipseTool.cs",
+              "RelativeToolTip": "Classes\\Tools\\EllipseTool.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAewAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:15:25.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RectangleTool.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\RectangleTool.cs",
+              "RelativeDocumentMoniker": "Classes\\Tools\\RectangleTool.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\RectangleTool.cs",
+              "RelativeToolTip": "Classes\\Tools\\RectangleTool.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:15:02.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EraserTool.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\EraserTool.cs",
+              "RelativeDocumentMoniker": "Classes\\Tools\\EraserTool.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\EraserTool.cs",
+              "RelativeToolTip": "Classes\\Tools\\EraserTool.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:14:45.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PixelCanvasControl.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
+              "RelativeDocumentMoniker": "UserControls\\PixelCanvasControl.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
+              "RelativeToolTip": "UserControls\\PixelCanvasControl.cs",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAzwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T06:12:49.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ToolWindowControl.cs [Design]",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\UserControls\\ToolWindowControl.cs",
+              "RelativeDocumentMoniker": "UserControls\\ToolWindowControl.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\UserControls\\ToolWindowControl.cs [Design]",
+              "RelativeToolTip": "UserControls\\ToolWindowControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T08:20:51.572Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IDrawingTool.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\Classes\\IDrawingTool.cs",
+              "RelativeDocumentMoniker": "Classes\\IDrawingTool.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\Classes\\IDrawingTool.cs",
+              "RelativeToolTip": "Classes\\IDrawingTool.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T08:17:02.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PenTool.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\PenTool.cs",
+              "RelativeDocumentMoniker": "Classes\\Tools\\PenTool.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\PenTool.cs",
+              "RelativeToolTip": "Classes\\Tools\\PenTool.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T08:17:26.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FillTool.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\FillTool.cs",
+              "RelativeDocumentMoniker": "Classes\\Tools\\FillTool.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\Classes\\Tools\\FillTool.cs",
+              "RelativeToolTip": "Classes\\Tools\\FillTool.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:14:23.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ToolWindowControl.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\UserControls\\ToolWindowControl.cs",
+              "RelativeDocumentMoniker": "UserControls\\ToolWindowControl.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\UserControls\\ToolWindowControl.cs",
+              "RelativeToolTip": "UserControls\\ToolWindowControl.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:08:14.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InputHandler.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\Classes\\Input\\InputHandler.cs",
+              "RelativeDocumentMoniker": "Classes\\Input\\InputHandler.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\Classes\\Input\\InputHandler.cs",
+              "RelativeToolTip": "Classes\\Input\\InputHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T08:06:02.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T08:20:03.356Z",
+              "EditorCaption": ""
             }
           ]
         }

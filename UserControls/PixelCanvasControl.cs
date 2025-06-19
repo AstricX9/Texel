@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Texel.Classes.Tools;
+using Texel.Classes.Input;
+using Texel.Classes;
 
 namespace Texel
 {
@@ -12,6 +15,13 @@ namespace Texel
         public int CellSize = 16;
         public Color[,] Pixels { get; private set; } = new Color[64, 64]; // or 128,128
         public ToolMode CurrentTool { get; set; } = ToolMode.Pen;
+
+        public Point PanOffset
+        {
+            get => panOffset;
+            set => panOffset = value;
+        }
+
         public Color SelectedColor { get; set; } = Color.Black;
 
         public int GridWidth => Pixels.GetLength(0);
@@ -27,20 +37,25 @@ namespace Texel
         private bool isPanning = false;
         private bool spaceDown = false;
 
+        private readonly System.Collections.Generic.Dictionary<ToolMode, IDrawingTool> _tools;
+
         public PixelCanvasControl()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.ResizeRedraw = true;
-
-            this.MouseDown += PixelCanvas_MouseDown;
-            this.MouseMove += PixelCanvas_MouseMove;
-            this.MouseUp += PixelCanvas_MouseUp;
-            this.KeyDown += PixelCanvas_KeyDown;
-            this.KeyUp += PixelCanvas_KeyUp;
-            this.MouseWheel += PixelCanvas_MouseWheel;
             this.SetStyle(ControlStyles.Selectable, true);
             this.TabStop = true;
+
+            _tools = new System.Collections.Generic.Dictionary<ToolMode, IDrawingTool>
+            {
+                { ToolMode.Pen, new PenTool() },
+                { ToolMode.Fill, new FillTool() },
+                { ToolMode.Eraser, new EraserTool() },
+                { ToolMode.Rectangle, new RectangleTool() },
+                { ToolMode.Ellipse, new EllipseTool() },
+                { ToolMode.Select, new SelectTool() }
+            };
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -108,18 +123,15 @@ namespace Texel
             }
         }
 
-        protected override void OnMouseWheel(MouseEventArgs e)
+        public void HandleMouseWheel(MouseEventArgs e)
         {
             try
             {
-                // Allow zooming with Ctrl or Alt (or both)
                 if ((ModifierKeys & Keys.Control) == Keys.Control || (ModifierKeys & Keys.Alt) == Keys.Alt)
                 {
                     int oldCellSize = CellSize;
                     int minCellSize = 4, maxCellSize = 64;
-                    int newCellSize = CellSize;
-
-                    newCellSize = e.Delta > 0
+                    int newCellSize = e.Delta > 0
                         ? Math.Min(maxCellSize, CellSize + 2)
                         : Math.Max(minCellSize, CellSize - 2);
 
@@ -136,10 +148,6 @@ namespace Texel
 
                         Invalidate();
                     }
-                }
-                else
-                {
-                    base.OnMouseWheel(e);
                 }
             }
             catch (Exception ex)
@@ -174,174 +182,53 @@ namespace Texel
             return Rectangle.FromLTRB(x1, y1, x2 + 1, y2 + 1); // +1 because Rectangle is exclusive at the end
         }
 
-        private void PixelCanvas_MouseDown(object sender, MouseEventArgs e)
+        public void HandleMouseDown(MouseEventArgs e)
         {
             this.Focus();
-
-            if (spaceDown && e.Button == MouseButtons.Left)
-            {
-                isPanning = true;
-                panStart = e.Location;
-                Cursor = Cursors.Hand;
-                return;
-            }
-
-            int px = (e.X - panOffset.X) / CellSize;
-            int py = (e.Y - panOffset.Y) / CellSize;
-            Point mousePoint = new Point(px, py);
-
-            if (CurrentTool == ToolMode.Select)
-            {
-                selectionStart = mousePoint;
-                selectionEnd = mousePoint;
-                isDragging = true;
-                hasSelection = false;
-                Invalidate();
-            }
-            else
-            {
-                // Clear selection when switching to a drawing tool
-                if (hasSelection)
-                {
-                    hasSelection = false;
-                    selectionStart = selectionEnd = null;
-                    Invalidate();
-                }
-
-                // Only draw if inside grid
-                if (px < 0 || py < 0 || px >= Pixels.GetLength(0) || py >= Pixels.GetLength(1))
-                    return;
-
-                if (CurrentTool == ToolMode.Pen)
-                {
-                    Pixels[px, py] = SelectedColor;
-                    Invalidate();
-                }
-                else if (CurrentTool == ToolMode.Fill)
-                {
-                    FloodFill(px, py, Pixels[px, py], SelectedColor);
-                    Invalidate();
-                }
-                else if (CurrentTool == ToolMode.Eraser)
-                {
-                    Pixels[px, py] = Color.Transparent;
-                    Invalidate();
-                }
-                else if (CurrentTool == ToolMode.Rectangle || CurrentTool == ToolMode.Ellipse)
-                {
-                    selectionStart = mousePoint;
-                    selectionEnd = selectionStart;
-                    isDragging = true;
-                    hasSelection = false;
-                    Invalidate();
-                }
-            }
+            var gridPoint = new Point((e.X - panOffset.X) / CellSize, (e.Y - panOffset.Y) / CellSize);
+            if (_tools.TryGetValue(CurrentTool, out var tool))
+                tool.OnMouseDown(gridPoint, e, this);
         }
 
-        private void PixelCanvas_MouseMove(object sender, MouseEventArgs e)
+        public void HandleMouseMove(MouseEventArgs e)
         {
-            if (isPanning)
-            {
-                panOffset.X += e.X - panStart.X;
-                panOffset.Y += e.Y - panStart.Y;
-                panStart = e.Location;
-                Invalidate();
-                return;
-            }
-
-            int px = (e.X - panOffset.X) / CellSize;
-            int py = (e.Y - panOffset.Y) / CellSize;
-            Point mousePoint = new Point(px, py);
-
-            if (e.Button == MouseButtons.Left)
-            {
-                if (CurrentTool == ToolMode.Pen)
-                {
-                    if (px >= 0 && py >= 0 && px < Pixels.GetLength(0) && py < Pixels.GetLength(1))
-                    {
-                        Pixels[px, py] = SelectedColor;
-                        Invalidate();
-                    }
-                }
-                else if (CurrentTool == ToolMode.Eraser)
-                {
-                    if (px >= 0 && py >= 0 && px < Pixels.GetLength(0) && py < Pixels.GetLength(1))
-                    {
-                        Pixels[px, py] = Color.Transparent;
-                        Invalidate();
-                    }
-                }
-                else if (isDragging && selectionStart.HasValue)
-                {
-                    selectionEnd = mousePoint;
-                    Invalidate();
-                }
-            }
+            var gridPoint = new Point((e.X - panOffset.X) / CellSize, (e.Y - panOffset.Y) / CellSize);
+            if (_tools.TryGetValue(CurrentTool, out var tool))
+                tool.OnMouseMove(gridPoint, e, this);
         }
 
-        private void PixelCanvas_MouseWheel(object sender, MouseEventArgs e)
+        public void HandleMouseUp(MouseEventArgs e)
         {
-            OnMouseWheel(e);
+            var gridPoint = new Point((e.X - panOffset.X) / CellSize, (e.Y - panOffset.Y) / CellSize);
+            if (_tools.TryGetValue(CurrentTool, out var tool))
+                tool.OnMouseUp(gridPoint, e, this);
         }
 
-        private void PixelCanvas_MouseUp(object sender, MouseEventArgs e)
+        public void HandleKeyDown(KeyEventArgs e)
         {
-            if (isPanning && e.Button == MouseButtons.Left)
-            {
-                isPanning = false;
-                Cursor = Cursors.Default;
-                return;
-            }
+            if (_tools.TryGetValue(CurrentTool, out var tool))
+                tool.OnKeyDown(e, this);
 
-            int px = (e.X - panOffset.X) / CellSize;
-            int py = (e.Y - panOffset.Y) / CellSize;
-
-            if (CurrentTool == ToolMode.Select && selectionStart.HasValue && selectionEnd.HasValue)
+            if (hasSelection && (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back))
             {
-                hasSelection = true;
-                isDragging = false;
-                Invalidate();
-            }
-            else if (isDragging && selectionStart.HasValue && selectionEnd.HasValue)
-            {
-                var (start, end) = GetAdjustedPoints(selectionStart.Value, selectionEnd.Value);
-
-                if (CurrentTool == ToolMode.Rectangle)
-                {
-                    DrawRectangle(start, end, SelectedColor);
-                }
-                else if (CurrentTool == ToolMode.Ellipse)
-                {
-                    DrawEllipse(start, end, SelectedColor);
-                }
-                selectionStart = selectionEnd = null;
-                isDragging = false;
-                Invalidate();
+                DeleteSelection();
             }
         }
 
-        private void PixelCanvas_KeyDown(object sender, KeyEventArgs e)
+        public void HandleKeyUp(KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
             {
-                spaceDown = true;
-                Cursor = Cursors.Hand;
-                return;
-            }
-
-            if (e.KeyCode == Keys.Delete && hasSelection && selectionStart.HasValue && selectionEnd.HasValue)
-            {
-                Rectangle sel = GetClampedSelectionRect();
-                for (int x = sel.Left; x < sel.Right; x++)
+                spaceDown = false;
+                if (isPanning)
                 {
-                    for (int y = sel.Top; y < sel.Bottom; y++)
-                    {
-                        Pixels[x, y] = Color.Transparent;
-                    }
+                    isPanning = false;
+                    Cursor = Cursors.Default;
                 }
-                hasSelection = false;
-                selectionStart = selectionEnd = null;
-                Invalidate();
+                else
+                {
+                    Cursor = Cursors.Default;
+                }
             }
         }
 
@@ -362,9 +249,6 @@ namespace Texel
             }
         }
 
-        /// <summary>
-        /// Returns true if the given pixel is inside the current selection.
-        /// </summary>
         private bool IsInSelection(int x, int y)
         {
             if (!selectionStart.HasValue || !selectionEnd.HasValue || !hasSelection)
@@ -373,9 +257,6 @@ namespace Texel
             return sel.Contains(x, y);
         }
 
-        /// <summary>
-        /// Adjusts the end point for aspect ratio (Shift) and centering (Shift+Alt).
-        /// </summary>
         private (Point, Point) GetAdjustedPoints(Point start, Point end)
         {
             bool shift = (ModifierKeys & Keys.Shift) == Keys.Shift;
@@ -617,6 +498,54 @@ namespace Texel
                 for (int y = 0; y < minH; y++)
                     newPixels[x, y] = Pixels[x, y];
             Pixels = newPixels;
+            Invalidate();
+        }
+
+        public void SetPreview(Point? start, Point? end, bool dragging)
+        {
+            selectionStart = start;
+            selectionEnd = end;
+            isDragging = dragging;
+            Invalidate();
+        }
+
+        public void ClearPreview()
+        {
+            selectionStart = null;
+            selectionEnd = null;
+            isDragging = false;
+            Invalidate();
+        }
+
+        public void ApplySelection(Point? start, Point? end)
+        {
+            selectionStart = start;
+            selectionEnd = end;
+            isDragging = false;
+            hasSelection = (start.HasValue && end.HasValue);
+            Invalidate();
+        }
+
+        public void ClearSelection()
+        {
+            selectionStart = null;
+            selectionEnd = null;
+            isDragging = false;
+            hasSelection = false;
+            Invalidate();
+        }
+
+        public void DeleteSelection()
+        {
+            if (!hasSelection || !selectionStart.HasValue || !selectionEnd.HasValue)
+                return;
+
+            Rectangle sel = GetClampedSelectionRect();
+            for (int x = sel.Left; x < sel.Right; x++)
+                for (int y = sel.Top; y < sel.Bottom; y++)
+                    Pixels[x, y] = Color.Transparent;
+
+            ClearSelection();
             Invalidate();
         }
     }

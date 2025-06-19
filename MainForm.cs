@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Texel.Classes.Input;
 
 namespace Texel
 {
     public partial class MainForm : Form
     {
+        private InputHandler _inputHandler;
+
         public MainForm()
         {
             InitializeComponent();
+            _inputHandler = new InputHandler(pixelCanvasControl1);
         }
 
         private void MainForm_Load(object sender, EventArgs e)

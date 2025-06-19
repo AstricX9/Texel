@@ -46,6 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\IDrawingTool.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Classes\Input\InputHandler.cs" />
+    <Compile Include="Classes\Tools\EllipseTool.cs" />
+    <Compile Include="Classes\Tools\EraserTool.cs" />
+    <Compile Include="Classes\Tools\FillTool.cs" />
+    <Compile Include="Classes\Tools\PenTool.cs" />
+    <Compile Include="Classes\Tools\RectangleTool.cs" />
+    <Compile Include="Classes\Tools\SelectTool.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,5 +107,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
