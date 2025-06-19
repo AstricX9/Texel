@@ -11,3 +11,16 @@ C:\Users\danie\source\repos\Texel\Texel\obj\Debug\Texel.exe.config
 C:\Users\danie\source\repos\Texel\Texel\obj\Debug\Texel.MainForm.resources
 C:\Users\danie\source\repos\Texel\Texel\obj\Debug\Texel.ToolWindowControl.resources
 C:\Users\danie\source\repos\Texel\Texel\obj\Debug\Texel.PixelCanvasControl.resources
+F:\Dev\Texel\Texel\bin\Debug\Texel.exe.config
+F:\Dev\Texel\Texel\bin\Debug\Texel.exe
+F:\Dev\Texel\Texel\bin\Debug\Texel.pdb
+F:\Dev\Texel\Texel\obj\Debug\Texel.csproj.AssemblyReference.cache
+F:\Dev\Texel\Texel\obj\Debug\Texel.MainForm.resources
+F:\Dev\Texel\Texel\obj\Debug\Texel.Properties.Resources.resources
+F:\Dev\Texel\Texel\obj\Debug\Texel.PixelCanvasControl.resources
+F:\Dev\Texel\Texel\obj\Debug\Texel.ToolWindowControl.resources
+F:\Dev\Texel\Texel\obj\Debug\Texel.csproj.GenerateResource.cache
+F:\Dev\Texel\Texel\obj\Debug\Texel.csproj.CoreCompileInputs.cache
+F:\Dev\Texel\Texel\obj\Debug\Texel.exe
+F:\Dev\Texel\Texel\obj\Debug\Texel.pdb
+F:\Dev\Texel\Texel\obj\Debug\Texel.exe.config

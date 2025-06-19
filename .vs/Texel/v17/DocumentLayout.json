@@ -1,46 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\danie\\source\\repos\\Texel\\",
+  "WorkspaceRootPath": "F:\\Dev\\Texel\\Texel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|c:\\users\\danie\\source\\repos\\texel\\texel\\usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|f:\\dev\\texel\\texel\\usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\texel\\usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|f:\\dev\\texel\\texel\\usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:usercontrols\\pixelcanvascontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\texel\\usercontrols\\toolwindowcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\usercontrols\\toolwindowcontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\texel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\texel\\usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\texel\\usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\texel\\usercontrols\\pixelcanvascontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\usercontrols\\pixelcanvascontrol.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\texel\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel\\Texel.csproj|solutionrelative:texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|f:\\dev\\texel\\texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,137 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PixelCanvasControl.cs",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
+              "RelativeDocumentMoniker": "UserControls\\PixelCanvasControl.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
+              "RelativeToolTip": "UserControls\\PixelCanvasControl.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAA9wIkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T06:12:49.985Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "PixelCanvasControl.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
-              "RelativeDocumentMoniker": "Texel\\UserControls\\PixelCanvasControl.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs [Design]",
-              "RelativeToolTip": "Texel\\UserControls\\PixelCanvasControl.cs [Design]",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
+              "RelativeDocumentMoniker": "UserControls\\PixelCanvasControl.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs [Design]",
+              "RelativeToolTip": "UserControls\\PixelCanvasControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:13:26.614Z",
+              "WhenOpened": "2025-06-19T06:12:45.188Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PixelCanvasControl.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
-              "RelativeDocumentMoniker": "Texel\\UserControls\\PixelCanvasControl.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
-              "RelativeToolTip": "Texel\\UserControls\\PixelCanvasControl.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAcwBMAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:13:28.108Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ToolWindowControl.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\ToolWindowControl.Designer.cs",
-              "RelativeDocumentMoniker": "Texel\\UserControls\\ToolWindowControl.Designer.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\ToolWindowControl.Designer.cs",
-              "RelativeToolTip": "Texel\\UserControls\\ToolWindowControl.Designer.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAADgvyYAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T03:27:50.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\MainForm.cs",
-              "RelativeDocumentMoniker": "Texel\\MainForm.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\MainForm.cs [Design]",
-              "RelativeToolTip": "Texel\\MainForm.cs [Design]",
+              "DocumentMoniker": "F:\\Dev\\Texel\\Texel\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "F:\\Dev\\Texel\\Texel\\MainForm.cs [Design]",
+              "RelativeToolTip": "MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:06:41.542Z",
+              "WhenOpened": "2025-06-19T06:10:27.712Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\Program.cs",
-              "RelativeDocumentMoniker": "Texel\\Program.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\Program.cs",
-              "RelativeToolTip": "Texel\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T03:51:48.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ToolWindowControl.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\ToolWindowControl.cs",
-              "RelativeDocumentMoniker": "Texel\\UserControls\\ToolWindowControl.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\ToolWindowControl.cs",
-              "RelativeToolTip": "Texel\\UserControls\\ToolWindowControl.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:27:11.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ToolWindowControl.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\ToolWindowControl.cs",
-              "RelativeDocumentMoniker": "Texel\\UserControls\\ToolWindowControl.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\ToolWindowControl.cs [Design]",
-              "RelativeToolTip": "Texel\\UserControls\\ToolWindowControl.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:23:04.202Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PixelCanvasControl.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\PixelCanvasControl.Designer.cs",
-              "RelativeDocumentMoniker": "Texel\\UserControls\\PixelCanvasControl.Designer.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\UserControls\\PixelCanvasControl.Designer.cs",
-              "RelativeToolTip": "Texel\\UserControls\\PixelCanvasControl.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:39:40.541Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\MainForm.Designer.cs",
-              "RelativeDocumentMoniker": "Texel\\MainForm.Designer.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\MainForm.Designer.cs",
-              "RelativeToolTip": "Texel\\MainForm.Designer.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAADgvzsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:31:22.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\MainForm.cs",
-              "RelativeDocumentMoniker": "Texel\\MainForm.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Texel\\MainForm.cs",
-              "RelativeToolTip": "Texel\\MainForm.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAjwBcAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:29:37.332Z",
-              "EditorCaption": ""
             }
           ]
         }

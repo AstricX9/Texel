@@ -38,6 +38,7 @@ namespace Texel
             this.MouseUp += PixelCanvas_MouseUp;
             this.KeyDown += PixelCanvas_KeyDown;
             this.KeyUp += PixelCanvas_KeyUp;
+            this.MouseWheel += PixelCanvas_MouseWheel;
             this.SetStyle(ControlStyles.Selectable, true);
             this.TabStop = true;
         }
@@ -109,32 +110,41 @@ namespace Texel
 
         protected override void OnMouseWheel(MouseEventArgs e)
         {
-            if ((ModifierKeys & Keys.Control) == Keys.Control)
+            try
             {
-                int oldCellSize = CellSize;
-                if (e.Delta > 0)
-                    CellSize = Math.Min(64, CellSize + 2);
-                else
-                    CellSize = Math.Max(4, CellSize - 2);
-
-                // Optional: keep the mouse position under the cursor after zoom
-                if (CellSize != oldCellSize)
+                // Allow zooming with Ctrl or Alt (or both)
+                if ((ModifierKeys & Keys.Control) == Keys.Control || (ModifierKeys & Keys.Alt) == Keys.Alt)
                 {
-                    // Calculate the logical pixel under the mouse before and after zoom
-                    var mouse = e.Location;
-                    int px = (e.X - panOffset.X) / CellSize;
-                    int py = (e.Y - panOffset.Y) / CellSize;
-                    int newX = px * CellSize + panOffset.X;
-                    int newY = py * CellSize + panOffset.Y;
-                    panOffset.X -= (newX - mouse.X);
-                    panOffset.Y -= (newY - mouse.Y);
-                }
+                    int oldCellSize = CellSize;
+                    int minCellSize = 4, maxCellSize = 64;
+                    int newCellSize = CellSize;
 
-                Invalidate();
+                    newCellSize = e.Delta > 0
+                        ? Math.Min(maxCellSize, CellSize + 2)
+                        : Math.Max(minCellSize, CellSize - 2);
+
+                    if (newCellSize != CellSize)
+                    {
+                        var mouse = e.Location;
+                        float logicalX = (mouse.X - panOffset.X) / (float)oldCellSize;
+                        float logicalY = (mouse.Y - panOffset.Y) / (float)oldCellSize;
+
+                        CellSize = newCellSize;
+
+                        panOffset.X = mouse.X - (int)(logicalX * CellSize);
+                        panOffset.Y = mouse.Y - (int)(logicalY * CellSize);
+
+                        Invalidate();
+                    }
+                }
+                else
+                {
+                    base.OnMouseWheel(e);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                base.OnMouseWheel(e);
+                MessageBox.Show("Zoom Error: " + ex.Message + "\n\n" + ex.StackTrace);
             }
         }
 
@@ -176,8 +186,8 @@ namespace Texel
                 return;
             }
 
-            int px = e.X / CellSize;
-            int py = e.Y / CellSize;
+            int px = (e.X - panOffset.X) / CellSize;
+            int py = (e.Y - panOffset.Y) / CellSize;
             Point mousePoint = new Point(px, py);
 
             if (CurrentTool == ToolMode.Select)
@@ -239,8 +249,8 @@ namespace Texel
                 return;
             }
 
-            int px = e.X / CellSize;
-            int py = e.Y / CellSize;
+            int px = (e.X - panOffset.X) / CellSize;
+            int py = (e.Y - panOffset.Y) / CellSize;
             Point mousePoint = new Point(px, py);
 
             if (e.Button == MouseButtons.Left)
@@ -269,6 +279,11 @@ namespace Texel
             }
         }
 
+        private void PixelCanvas_MouseWheel(object sender, MouseEventArgs e)
+        {
+            OnMouseWheel(e);
+        }
+
         private void PixelCanvas_MouseUp(object sender, MouseEventArgs e)
         {
             if (isPanning && e.Button == MouseButtons.Left)
@@ -277,6 +292,9 @@ namespace Texel
                 Cursor = Cursors.Default;
                 return;
             }
+
+            int px = (e.X - panOffset.X) / CellSize;
+            int py = (e.Y - panOffset.Y) / CellSize;
 
             if (CurrentTool == ToolMode.Select && selectionStart.HasValue && selectionEnd.HasValue)
             {
