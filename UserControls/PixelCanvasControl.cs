@@ -5,16 +5,22 @@ using System.Windows.Forms;
 using Texel.Classes.Tools;
 using Texel.Classes.Input;
 using Texel.Classes;
+using Texel.Classes.UndoSystem;
 
 namespace Texel
 {
-    public enum ToolMode { Pen, Fill, Select, Rectangle, Ellipse, Eraser }
+    public enum ToolMode { Pen, Fill, Select, Rectangle, Ellipse, Eraser, Line, Eyedropper }
 
     public partial class PixelCanvasControl : UserControl
     {
         public int CellSize = 16;
-        public Color[,] Pixels { get; private set; } = new Color[64, 64]; // or 128,128
+        public Color[,] Pixels { get; private set; } = new Color[64, 64];
         public ToolMode CurrentTool { get; set; } = ToolMode.Pen;
+        public bool ShowGrid { get; set; } = true;
+
+        private UndoManager _undoManager = new UndoManager();
+
+        public event EventHandler<Color> ColorSampled;
 
         public Point PanOffset
         {
@@ -54,7 +60,9 @@ namespace Texel
                 { ToolMode.Eraser, new EraserTool() },
                 { ToolMode.Rectangle, new RectangleTool() },
                 { ToolMode.Ellipse, new EllipseTool() },
-                { ToolMode.Select, new SelectTool() }
+                { ToolMode.Select, new SelectTool() },
+                { ToolMode.Line, new LineTool() },
+                { ToolMode.Eyedropper, new EyedropperTool() }
             };
         }
 
@@ -85,13 +93,14 @@ namespace Texel
                             g.FillRectangle(brush, rect);
                     }
 
-                    // Grid lines
-                    g.DrawRectangle(Pens.DarkGray, rect);
+                    // Grid lines (only if ShowGrid is true)
+                    if (ShowGrid)
+                        g.DrawRectangle(Pens.DarkGray, rect);
                 }
             }
 
             // Draw pixel-perfect preview for shapes while dragging
-            if ((CurrentTool == ToolMode.Rectangle || CurrentTool == ToolMode.Ellipse)
+            if ((CurrentTool == ToolMode.Rectangle || CurrentTool == ToolMode.Ellipse || CurrentTool == ToolMode.Line)
                 && selectionStart.HasValue && selectionEnd.HasValue && isDragging)
             {
                 var (start, end) = GetAdjustedPoints(selectionStart.Value, selectionEnd.Value);
@@ -102,6 +111,10 @@ namespace Texel
                 else if (CurrentTool == ToolMode.Ellipse)
                 {
                     DrawEllipsePreview(g, start, end);
+                }
+                else if (CurrentTool == ToolMode.Line)
+                {
+                    DrawLinePreview(g, start, end);
                 }
             }
 
@@ -489,16 +502,197 @@ namespace Texel
                 g.FillRectangle(brush, (cx - x) * CellSize, (cy - y) * CellSize, CellSize, CellSize);
         }
 
-        public void SetGridSize(int width, int height)
+        // New method for drawing line preview
+        private void DrawLinePreview(Graphics g, Point start, Point end)
         {
-            var newPixels = new Color[width, height];
-            int minW = Math.Min(width, Pixels.GetLength(0));
-            int minH = Math.Min(height, Pixels.GetLength(1));
-            for (int x = 0; x < minW; x++)
-                for (int y = 0; y < minH; y++)
-                    newPixels[x, y] = Pixels[x, y];
-            Pixels = newPixels;
+            // Bresenham's line algorithm for preview
+            int x0 = start.X;
+            int y0 = start.Y;
+            int x1 = end.X;
+            int y1 = end.Y;
+
+            bool steep = Math.Abs(y1 - y0) > Math.Abs(x1 - x0);
+            if (steep)
+            {
+                // Swap x0, y0
+                int temp = x0;
+                x0 = y0;
+                y0 = temp;
+
+                // Swap x1, y1
+                temp = x1;
+                x1 = y1;
+                y1 = temp;
+            }
+
+            if (x0 > x1)
+            {
+                // Swap x0, x1
+                int temp = x0;
+                x0 = x1;
+                x1 = temp;
+
+                // Swap y0, y1
+                temp = y0;
+                y0 = y1;
+                y1 = temp;
+            }
+
+            int dx = x1 - x0;
+            int dy = Math.Abs(y1 - y0);
+            int error = dx / 2;
+            int ystep = (y0 < y1) ? 1 : -1;
+            int y = y0;
+
+            using (var brush = new SolidBrush(Color.FromArgb(120, SelectedColor)))
+            {
+                for (int x = x0; x <= x1; x++)
+                {
+                    int drawX = steep ? y : x;
+                    int drawY = steep ? x : y;
+
+                    if (drawX >= 0 && drawX < Pixels.GetLength(0) && drawY >= 0 && drawY < Pixels.GetLength(1))
+                    {
+                        g.FillRectangle(brush, drawX * CellSize, drawY * CellSize, CellSize, CellSize);
+                    }
+
+                    error -= dy;
+                    if (error < 0)
+                    {
+                        y += ystep;
+                        error += dx;
+                    }
+                }
+            }
+        }
+
+        public void SetGridSize(int width, int height, Color[,] existingPixels = null)
+        {
+            if (existingPixels == null)
+            {
+                // Create a CanvasSizeAction for undo/redo
+                var oldPixels = (Color[,])Pixels.Clone();
+                var undoAction = new CanvasSizeAction(Pixels.GetLength(0), Pixels.GetLength(1),
+                                                    width, height, oldPixels);
+                _undoManager.PushAction(undoAction);
+
+                var newPixels = new Color[width, height];
+                int minW = Math.Min(width, Pixels.GetLength(0));
+                int minH = Math.Min(height, Pixels.GetLength(1));
+                for (int x = 0; x < minW; x++)
+                    for (int y = 0; y < minH; y++)
+                        newPixels[x, y] = Pixels[x, y];
+                Pixels = newPixels;
+            }
+            else
+            {
+                // Use the existing pixels (for undo operation)
+                Pixels = existingPixels;
+            }
+
             Invalidate();
+        }
+
+        public void PushUndoAction(EditAction action)
+        {
+            _undoManager.PushAction(action);
+        }
+
+        public void Undo()
+        {
+            _undoManager.Undo(this);
+        }
+
+        public void Redo()
+        {
+            _undoManager.Redo(this);
+        }
+
+        public bool CanUndo => _undoManager.CanUndo;
+        public bool CanRedo => _undoManager.CanRedo;
+
+        public void CopySelection()
+        {
+            if (!hasSelection || !selectionStart.HasValue || !selectionEnd.HasValue)
+                return;
+
+            Rectangle sel = GetClampedSelectionRect();
+            int width = sel.Width;
+            int height = sel.Height;
+
+            var bitmap = new Bitmap(width, height);
+
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    bitmap.SetPixel(x, y, Pixels[sel.Left + x, sel.Top + y]);
+                }
+            }
+
+            Clipboard.SetImage(bitmap);
+        }
+
+        public void CutSelection()
+        {
+            if (!hasSelection || !selectionStart.HasValue || !selectionEnd.HasValue)
+                return;
+
+            CopySelection();
+            DeleteSelection();
+        }
+
+        public void PasteFromClipboard(Point? location = null)
+        {
+            if (!Clipboard.ContainsImage())
+                return;
+
+            try
+            {
+                using (var bitmap = (Bitmap)Clipboard.GetImage())
+                {
+                    var pixelAction = new PixelEditAction();
+
+                    // Determine paste location (center if not specified)
+                    int startX = location?.X ?? (Pixels.GetLength(0) - bitmap.Width) / 2;
+                    int startY = location?.Y ?? (Pixels.GetLength(1) - bitmap.Height) / 2;
+
+                    for (int x = 0; x < bitmap.Width; x++)
+                    {
+                        for (int y = 0; y < bitmap.Height; y++)
+                        {
+                            int targetX = startX + x;
+                            int targetY = startY + y;
+
+                            if (targetX >= 0 && targetX < Pixels.GetLength(0) &&
+                                targetY >= 0 && targetY < Pixels.GetLength(1))
+                            {
+                                Color pixelColor = bitmap.GetPixel(x, y);
+
+                                // Only replace non-transparent pixels
+                                if (pixelColor.A > 0)
+                                {
+                                    pixelAction.AddChange(targetX, targetY, Pixels[targetX, targetY], pixelColor);
+                                    Pixels[targetX, targetY] = pixelColor;
+                                }
+                            }
+                        }
+                    }
+
+                    _undoManager.PushAction(pixelAction);
+                    Invalidate();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error pasting image: {ex.Message}", "Paste Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        internal void OnColorSampled(Color color)
+        {
+            ColorSampled?.Invoke(this, color);
         }
 
         public void SetPreview(Point? start, Point? end, bool dragging)

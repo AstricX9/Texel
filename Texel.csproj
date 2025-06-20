@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,18 +54,55 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Classes\Input\InputHandler.cs" />
+    <Compile Include="Classes\MinecraftAssetsService.cs" />
+    <Compile Include="Classes\MinecraftPacks.cs" />
+    <Compile Include="Classes\ProjectService.cs" />
     <Compile Include="Classes\Tools\EllipseTool.cs" />
     <Compile Include="Classes\Tools\EraserTool.cs" />
+    <Compile Include="Classes\Tools\EyedropperTool.cs" />
     <Compile Include="Classes\Tools\FillTool.cs" />
+    <Compile Include="Classes\Tools\LineTool.cs" />
     <Compile Include="Classes\Tools\PenTool.cs" />
     <Compile Include="Classes\Tools\RectangleTool.cs" />
     <Compile Include="Classes\Tools\SelectTool.cs" />
+    <Compile Include="Classes\UndoManager.cs" />
+    <Compile Include="Dialogs\NewPackDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewPackDialog.Designer.cs">
+      <DependentUpon>NewPackDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ResizeCanvasDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ResizeCanvasDialog.Designer.cs">
+      <DependentUpon>ResizeCanvasDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SettingsDialog.Designer.cs">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TextInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TextInputDialog.Designer.cs">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TexturePathDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TexturePathDialog.Designer.cs">
+      <DependentUpon>TexturePathDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\AppSettings.cs" />
     <Compile Include="UserControls\PixelCanvasControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,6 +117,9 @@
     <Compile Include="UserControls\ToolWindowControl.Designer.cs">
       <DependentUpon>ToolWindowControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dialogs\NewPackDialog.resx">
+      <DependentUpon>NewPackDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +138,7 @@
     <EmbeddedResource Include="UserControls\ToolWindowControl.resx">
       <DependentUpon>ToolWindowControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
