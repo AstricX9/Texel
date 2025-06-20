@@ -25,7 +25,6 @@ F:\Dev\Texel\Texel\obj\Debug\Texel.csproj.CoreCompileInputs.cache
 F:\Dev\Texel\Texel\obj\Debug\Texel.exe
 F:\Dev\Texel\Texel\obj\Debug\Texel.pdb
 F:\Dev\Texel\Texel\obj\Debug\Texel.exe.config
-C:\Users\danie\source\repos\Texel\bin\Debug\Classes\IDrawingTool.cs
 C:\Users\danie\source\repos\Texel\bin\Debug\Texel.exe.config
 C:\Users\danie\source\repos\Texel\bin\Debug\Texel.exe
 C:\Users\danie\source\repos\Texel\bin\Debug\Texel.pdb

@@ -21,7 +21,8 @@ namespace Texel
         private ProjectService _projectService;
         private MinecraftAssetsService _assetsService;
         private List<ToolStripMenuItem> _recentProjectMenuItems = new List<ToolStripMenuItem>();
-        
+        private TextureBrowserForm _textureBrowser;
+
         public MainForm()
         {
             InitializeComponent();
@@ -72,6 +73,13 @@ namespace Texel
             // Refresh UI
             UpdateStatusBar();
             UpdateRecentProjectsMenu();
+            
+            // Open the texture browser with this version
+            ShowTextureBrowser();
+            if (_textureBrowser != null && !_textureBrowser.IsDisposed)
+            {
+                _textureBrowser.RefreshBrowser(pack.Version);
+            }
         }
         
         private void OnProjectSaved(object sender, MinecraftPack pack)
@@ -520,6 +528,35 @@ namespace Texel
                     }
                 }
             }
+        }
+
+        private void ShowTextureBrowser()
+        {
+            if (_textureBrowser == null || _textureBrowser.IsDisposed)
+            {
+                _textureBrowser = new TextureBrowserForm(_assetsService, pixelCanvasControl1);
+                _textureBrowser.TextureOpened += (sender, path) => {
+                    statusLabel.Text = $"Opened texture: {Path.GetFileName(path)}";
+                };
+            }
+            
+            if (!_textureBrowser.Visible)
+            {
+                _textureBrowser.Show(this);
+                
+                // Set browser to use current pack's version if available
+                if (_projectService.CurrentPack != null)
+                {
+                    _textureBrowser.RefreshBrowser(_projectService.CurrentPack.Version);
+                }
+            }
+            
+            _textureBrowser.BringToFront();
+        }
+
+        private void textureBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowTextureBrowser();
         }
     }
 }

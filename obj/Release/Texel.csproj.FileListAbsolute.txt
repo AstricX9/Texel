@@ -1,0 +1,17 @@
+C:\Users\danie\source\repos\Texel\bin\Release\Texel.exe.config
+C:\Users\danie\source\repos\Texel\bin\Release\Texel.exe
+C:\Users\danie\source\repos\Texel\bin\Release\Texel.pdb
+C:\Users\danie\source\repos\Texel\bin\Release\Newtonsoft.Json.dll
+C:\Users\danie\source\repos\Texel\bin\Release\Newtonsoft.Json.xml
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.csproj.AssemblyReference.cache
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.Dialogs.NewPackDialog.resources
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.MainForm.resources
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.Properties.Resources.resources
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.PixelCanvasControl.resources
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.ToolWindowControl.resources
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.csproj.GenerateResource.cache
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.csproj.CoreCompileInputs.cache
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.csproj.Up2Date
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.exe
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.pdb
+C:\Users\danie\source\repos\Texel\obj\Release\Texel.exe.config

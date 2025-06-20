@@ -23,8 +23,7 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -55,6 +54,7 @@
             this.openInExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toggleGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textureBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -273,7 +273,8 @@
             // windowToolStripMenuItem
             // 
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toggleGridToolStripMenuItem});
+            this.toggleGridToolStripMenuItem,
+            this.textureBrowserToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
             this.windowToolStripMenuItem.Text = "Window";
@@ -286,6 +287,13 @@
             this.toggleGridToolStripMenuItem.CheckOnClick = true;
             this.toggleGridToolStripMenuItem.Checked = true;
             this.toggleGridToolStripMenuItem.Click += new System.EventHandler(this.toggleGridToolStripMenuItem_Click);
+            // 
+            // textureBrowserToolStripMenuItem
+            // 
+            this.textureBrowserToolStripMenuItem.Name = "textureBrowserToolStripMenuItem";
+            this.textureBrowserToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.textureBrowserToolStripMenuItem.Text = "Texture Browser";
+            this.textureBrowserToolStripMenuItem.Click += new System.EventHandler(this.textureBrowserToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -441,6 +449,7 @@
         private System.Windows.Forms.ToolStripMenuItem openInExplorerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toggleGridToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textureBrowserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
