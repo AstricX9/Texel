@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\danie\\source\\repos\\Texel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\classes\\minecraftassetsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|c:\\users\\danie\\source\\repos\\texel\\classes\\minecraftassetsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\minecraftassetsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\texturebrowserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|c:\\users\\danie\\source\\repos\\texel\\dialogs\\texturebrowserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\dialogs\\texturebrowserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\texturebrowserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -192,8 +192,16 @@
         },
         {
           "DockedHeight": 236,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -204,8 +212,7 @@
               "RelativeToolTip": "MainForm.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAtwCsAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:42:18.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T09:42:18.172Z"
             },
             {
               "$type": "Document",
@@ -217,8 +224,7 @@
               "RelativeToolTip": "MainForm.Designer.cs",
               "ViewState": "AgIAALcBAAAAAAAAAAAYwM0BAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:37:25.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T23:37:25.352Z"
             },
             {
               "$type": "Document",
@@ -228,14 +234,10 @@
               "RelativeDocumentMoniker": "Classes\\MinecraftAssetsService.cs",
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Classes\\MinecraftAssetsService.cs",
               "RelativeToolTip": "Classes\\MinecraftAssetsService.cs",
-              "ViewState": "AgIAAKEAAAAAAAAAAAAowKwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAowK0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T00:21:34.898Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -246,8 +248,7 @@
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\MainForm.cs [Design]",
               "RelativeToolTip": "MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:10:27.712Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-19T06:10:27.712Z"
             },
             {
               "$type": "Document",
@@ -259,8 +260,7 @@
               "RelativeToolTip": "Dialogs\\TextureBrowserForm.cs",
               "ViewState": "AgIAAOcAAAAAAAAAAAAQwA8BAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T01:55:18.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T01:55:18.999Z"
             },
             {
               "$type": "Document",
@@ -271,8 +271,7 @@
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\TextureBrowserForm.cs [Design]",
               "RelativeToolTip": "Dialogs\\TextureBrowserForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T01:55:08.229Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-20T01:55:08.229Z"
             },
             {
               "$type": "Document",
@@ -331,8 +330,7 @@
               "RelativeToolTip": "Classes\\ProjectService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:17:39.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T23:17:39.058Z"
             },
             {
               "$type": "Document",
@@ -509,8 +507,7 @@
               "RelativeToolTip": "Classes\\Tools\\LineTool.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:45:40.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T23:45:40.265Z"
             },
             {
               "$type": "Document",
@@ -557,8 +554,7 @@
               "RelativeToolTip": "Classes\\MinecraftPacks.cs",
               "ViewState": "AgIAAFIAAAAAAAAAAAAwwAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:14:17.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T23:14:17.151Z"
             },
             {
               "$type": "Document",
@@ -713,20 +709,6 @@
               "ViewState": "AgIAABIAAAAAAAAAAAA2wKgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T23:44:37.019Z"
-            }
-          ]
-        },
-        {
-          "DockedHeight": 164,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }
