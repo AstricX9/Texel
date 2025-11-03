@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using Texel.Models;
 using Texel.Services;
+using Texel.Classes;
 
 namespace Texel.Dialogs
 {
@@ -28,6 +29,7 @@ namespace Texel.Dialogs
             // Set default location
             txtLocation.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
+            // Load available Minecraft versions
             LoadVersionsAsync();
         }
 
@@ -42,6 +44,12 @@ namespace Texel.Dialogs
 
                 var versions = await _assetsService.GetAvailableVersionsAsync();
 
+                // If the service returned nothing, fall back to the central Data file list
+                if (versions == null || versions.Count == 0)
+                {
+                    versions = MinecraftVersionStore.GetSupportedVersions();
+                }
+
                 cboVersion.Items.Clear();
                 foreach (var version in versions)
                 {
@@ -55,11 +63,12 @@ namespace Texel.Dialogs
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading Minecraft versions: {ex.Message}\nUsing default versions instead.",
+                MessageBox.Show($"Error loading Minecraft versions: {ex.Message}\nUsing bundled versions instead.",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 cboVersion.Items.Clear();
-                cboVersion.Items.AddRange(new object[] { "1.20.1", "1.19.4", "1.18.2", "1.17.1", "1.16.5" });
+                var defaults = MinecraftVersionStore.GetSupportedVersions();
+                cboVersion.Items.AddRange(defaults.ToArray());
                 cboVersion.SelectedIndex = 0;
             }
             finally

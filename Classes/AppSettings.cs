@@ -9,7 +9,7 @@ namespace Texel.Classes
     public class AppSettings
     {
         // Default project settings
-        public string DefaultMinecraftVersion { get; set; } = "1.20.1";
+    public string DefaultMinecraftVersion { get; set; } = "1.21.0";
         public int DefaultResolution { get; set; } = 16;
         
         // Auto-save settings

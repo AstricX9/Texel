@@ -11,7 +11,7 @@ namespace Texel.Models
     {
         public string Name { get; set; } = "New Resource Pack";
         public string Description { get; set; } = "Made with Texel Editor";
-        public string Version { get; set; } = "1.20.1";
+        public string Version { get; set; } = "1.21.0";
         public int Resolution { get; set; } = 16;
         public int PackFormat { get; set; } = 15; // Auto-calculated based on version
         public string ProjectPath { get; set; }
@@ -54,7 +54,8 @@ namespace Texel.Models
         {
             // Based on Minecraft version, update pack_format
             // Reference: https://minecraft.fandom.com/wiki/Resource_pack#Pack_format
-            if (Version.StartsWith("1.20.2") || Version.StartsWith("1.20.3")) PackFormat = 18;
+            if (Version.StartsWith("1.21")) PackFormat = 19;
+            else if (Version.StartsWith("1.20.2") || Version.StartsWith("1.20.3")) PackFormat = 18;
             else if (Version.StartsWith("1.20")) PackFormat = 15;
             else if (Version.StartsWith("1.19.4")) PackFormat = 13;
             else if (Version.StartsWith("1.19")) PackFormat = 9;

@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Drawing;
 using Newtonsoft.Json;
 using Texel.Models;
+using Texel.Classes;
 
 namespace Texel.Services
 {
@@ -44,12 +46,35 @@ namespace Texel.Services
 
                 foreach (var branch in branches)
                 {
-                    if (branch.Name.StartsWith("1.") && !branch.Name.Contains("-pre") && !branch.Name.Contains("-rc"))
-                    {
-                        versions.Add(branch.Name);
-                    }
+                    // Include stable 1.x releases and ignore pre/rc branches. We no longer
+                    // filter by a minimum minor version because older 1.x releases are
+                    // considered supported by the mapping in MinecraftPacks.UpdatePackFormat.
+                    if (!branch.Name.StartsWith("1."))
+                        continue;
+
+                    if (branch.Name.Contains("-pre") || branch.Name.Contains("-rc"))
+                        continue;
+
+                    versions.Add(branch.Name);
                 }
 
+                // Merge with central store to ensure all supported versions are present
+                var baseline = MinecraftVersionStore.GetSupportedVersions();
+                var merged = new HashSet<string>(versions, StringComparer.OrdinalIgnoreCase);
+                foreach (var v in baseline) merged.Add(v);
+                versions = merged.ToList();
+
+                // Determine the minimum supported version from the baseline (e.g., 1.8)
+                var minSupported = baseline
+                    .OrderBy(v => v, Comparer<string>.Create(CompareVersions))
+                    .FirstOrDefault() ?? "1.8";
+
+                // Filter out anything older than the minimum supported version
+                versions = versions
+                    .Where(v => CompareVersions(v, minSupported) >= 0)
+                    .ToList();
+
+                // Sort newest-first
                 versions.Sort((a, b) => CompareVersions(b, a));
             }
             catch (Exception ex)

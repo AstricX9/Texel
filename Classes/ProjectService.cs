@@ -237,8 +237,9 @@ namespace Texel.Services
                             int packFormat = (int)mcmeta.pack.pack_format;
                             newPack.PackFormat = packFormat;
                             
-                            // Set version based on pack_format
-                            if (packFormat >= 18) newPack.Version = "1.20.2";
+                            // Set version based on pack_format (extended to include 1.21)
+                            if (packFormat >= 19) newPack.Version = "1.21.0";
+                            else if (packFormat >= 18) newPack.Version = "1.20.2";
                             else if (packFormat >= 15) newPack.Version = "1.20.1";
                             else if (packFormat >= 13) newPack.Version = "1.19.4";
                             else if (packFormat >= 9) newPack.Version = "1.19.3";

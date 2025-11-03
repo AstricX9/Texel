@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\IDrawingTool.cs" />
+    <Compile Include="Classes\MinecraftVersionStore.cs" />
     <Compile Include="Classes\Input\InputHandler.cs" />
     <Compile Include="Classes\MinecraftAssetsService.cs" />
     <Compile Include="Classes\MinecraftPacks.cs" />
@@ -156,6 +157,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Content Include="Data\minecraft_versions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

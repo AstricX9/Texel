@@ -35,7 +35,13 @@ namespace Texel.Dialogs
             try
             {
                 var versions = await _assetsService.GetAvailableVersionsAsync();
-                
+
+                // If service returns nothing, fall back to central Data list
+                if (versions == null || versions.Count == 0)
+                {
+                    versions = MinecraftVersionStore.GetSupportedVersions();
+                }
+
                 cboDefaultVersion.Items.Clear();
                 foreach (var version in versions)
                 {
@@ -56,7 +62,8 @@ namespace Texel.Dialogs
             catch
             {
                 cboDefaultVersion.Items.Clear();
-                cboDefaultVersion.Items.AddRange(new object[] { "1.20.1", "1.19.4", "1.18.2", "1.17.1", "1.16.5" });
+                var defaults = MinecraftVersionStore.GetSupportedVersions();
+                cboDefaultVersion.Items.AddRange(defaults.ToArray());
                 cboDefaultVersion.SelectedIndex = 0;
             }
             finally
