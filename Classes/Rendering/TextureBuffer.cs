@@ -1,0 +1,54 @@
+using System;
+using System.Drawing;
+
+namespace Texel.Classes.Rendering
+{
+ public class TextureBuffer
+ {
+ public int Width { get; private set; }
+ public int Height { get; private set; }
+ public Color[,] Data { get; private set; }
+
+ public event Action Changed;
+
+ public TextureBuffer(int width, int height)
+ {
+ Width = width;
+ Height = height;
+ Data = new Color[width, height];
+ }
+
+ public TextureBuffer(Color[,] pixels)
+ {
+ Replace(pixels);
+ }
+
+ public void Replace(Color[,] pixels)
+ {
+ if (pixels == null) throw new ArgumentNullException(nameof(pixels));
+ Data = pixels;
+ Width = pixels.GetLength(0);
+ Height = pixels.GetLength(1);
+ Changed?.Invoke();
+ }
+
+ public byte[] ToBgraBytes()
+ {
+ // Convert the current Data to BGRA byte array for GL upload
+ var bytes = new byte[Width * Height *4];
+ int i =0;
+ for (int y =0; y < Height; y++)
+ {
+ for (int x =0; x < Width; x++)
+ {
+ var c = Data[x, y];
+ bytes[i++] = c.B;
+ bytes[i++] = c.G;
+ bytes[i++] = c.R;
+ bytes[i++] = c.A;
+ }
+ }
+ return bytes;
+ }
+ }
+}

@@ -1,0 +1,78 @@
+﻿namespace Texel.Dialogs
+{
+    partial class TextureBrowserForm
+    {
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.cboVersion = new System.Windows.Forms.ComboBox();
+            this.treeTextures = new System.Windows.Forms.TreeView();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.btnOpen = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // cboVersion
+            // 
+            this.cboVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboVersion.FormattingEnabled = true;
+            this.cboVersion.Location = new System.Drawing.Point(12, 12);
+            this.cboVersion.Name = "cboVersion";
+            this.cboVersion.Size = new System.Drawing.Size(260, 28);
+            this.cboVersion.TabIndex = 0;
+            this.cboVersion.SelectedIndexChanged += new System.EventHandler(this.cboVersion_SelectedIndexChanged);
+            // 
+            // treeTextures
+            // 
+            this.treeTextures.Location = new System.Drawing.Point(12, 46);
+            this.treeTextures.Name = "treeTextures";
+            this.treeTextures.Size = new System.Drawing.Size(260, 392);
+            this.treeTextures.TabIndex = 1;
+            this.treeTextures.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeTextures_AfterSelect);
+            this.treeTextures.DoubleClick += new System.EventHandler(this.treeTextures_DoubleClick);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(278, 46);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(256, 256);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 2;
+            this.pictureBox.TabStop = false;
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Enabled = false;
+            this.btnOpen.Location = new System.Drawing.Point(278, 308);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(94, 29);
+            this.btnOpen.TabIndex = 3;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // TextureBrowserForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(546, 450);
+            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.treeTextures);
+            this.Controls.Add(this.cboVersion);
+            this.Name = "TextureBrowserForm";
+            this.Text = "Texture Browser";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        private System.Windows.Forms.ComboBox cboVersion;
+        private System.Windows.Forms.TreeView treeTextures;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button btnOpen;
+    }
+}

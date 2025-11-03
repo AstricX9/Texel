@@ -1,0 +1,105 @@
+﻿using System;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
+using Texel.Models;
+
+namespace Texel.Dialogs
+{
+ public partial class ProjectTexturesForm : Form
+ {
+ public event EventHandler<string> TextureOpened;
+
+ public ProjectTexturesForm()
+ {
+ InitializeComponent();
+ this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+ this.ShowInTaskbar = false;
+ this.FormClosing += (s, e) => {
+ if (e.CloseReason == CloseReason.UserClosing)
+ {
+ e.Cancel = true;
+ this.Hide();
+ }
+ };
+ }
+
+ public void RefreshViewer(MinecraftPack pack)
+ {
+ if (pack == null) return;
+ tree.Nodes.Clear();
+ imagePreview.Image = null;
+
+ var texturesRoot = pack.GetTexturesPath();
+ if (!Directory.Exists(texturesRoot)) return;
+
+ var root = new TreeNode(Path.GetFileName(texturesRoot)) { Tag = texturesRoot };
+ AddDirectory(root, texturesRoot);
+ tree.Nodes.Add(root);
+ root.Expand();
+ }
+
+ private void AddDirectory(TreeNode parent, string path)
+ {
+ foreach (var dir in Directory.GetDirectories(path))
+ {
+ var dn = Path.GetFileName(dir);
+ var node = new TreeNode(dn) { Tag = dir };
+ AddDirectory(node, dir);
+ if (node.Nodes.Count >0) parent.Nodes.Add(node);
+ }
+ foreach (var file in Directory.GetFiles(path, "*.png"))
+ {
+ parent.Nodes.Add(new TreeNode(Path.GetFileName(file)) { Tag = file });
+ }
+ }
+
+ private void tree_AfterSelect(object sender, TreeViewEventArgs e)
+ {
+ var path = e.Node.Tag as string;
+ if (File.Exists(path) && Path.GetExtension(path).Equals(".png", StringComparison.OrdinalIgnoreCase))
+ {
+ try
+ {
+ if (imagePreview.Image != null)
+ {
+ var old = imagePreview.Image; imagePreview.Image = null; old.Dispose();
+ }
+ imagePreview.Image = Image.FromFile(path);
+ btnOpen.Enabled = true;
+ }
+ catch
+ {
+ btnOpen.Enabled = false;
+ }
+ }
+ else
+ {
+ btnOpen.Enabled = false;
+ if (imagePreview.Image != null)
+ {
+ var old = imagePreview.Image; imagePreview.Image = null; old.Dispose();
+ }
+ }
+ }
+
+ private void btnOpen_Click(object sender, EventArgs e)
+ {
+ OpenSelected();
+ }
+
+ private void tree_DoubleClick(object sender, EventArgs e)
+ {
+ OpenSelected();
+ }
+
+ private void OpenSelected()
+ {
+ var node = tree.SelectedNode;
+ var path = node?.Tag as string;
+ if (!string.IsNullOrEmpty(path) && File.Exists(path))
+ TextureOpened?.Invoke(this, path);
+ }
+ }
+}

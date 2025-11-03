@@ -51,90 +51,101 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSelect);
             this.flowLayoutPanel1.Controls.Add(this.btnEyedropper);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.WrapContents = false;
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(170, 150);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(60, 300);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnPen
             // 
             this.btnPen.BackColor = System.Drawing.Color.LightBlue;
-            this.btnPen.Location = new System.Drawing.Point(3, 3);
+            this.btnPen.Location = new System.Drawing.Point(7, 7);
+            this.btnPen.Margin = new System.Windows.Forms.Padding(3);
             this.btnPen.Name = "btnPen";
-            this.btnPen.Size = new System.Drawing.Size(75, 23);
+            this.btnPen.Size = new System.Drawing.Size(48, 48);
             this.btnPen.TabIndex = 0;
             this.btnPen.Tag = "Pen";
-            this.btnPen.Text = "Pen";
+            this.btnPen.Text = "P";
             this.btnPen.UseVisualStyleBackColor = false;
             // 
             // btnEraser
             // 
-            this.btnEraser.Location = new System.Drawing.Point(84, 3);
+            this.btnEraser.Location = new System.Drawing.Point(7, 61);
+            this.btnEraser.Margin = new System.Windows.Forms.Padding(3);
             this.btnEraser.Name = "btnEraser";
-            this.btnEraser.Size = new System.Drawing.Size(75, 23);
+            this.btnEraser.Size = new System.Drawing.Size(48, 48);
             this.btnEraser.TabIndex = 1;
             this.btnEraser.Tag = "Eraser";
-            this.btnEraser.Text = "Eraser";
+            this.btnEraser.Text = "E";
             this.btnEraser.UseVisualStyleBackColor = true;
             // 
             // btnFill
             // 
-            this.btnFill.Location = new System.Drawing.Point(3, 32);
+            this.btnFill.Location = new System.Drawing.Point(7, 115);
+            this.btnFill.Margin = new System.Windows.Forms.Padding(3);
             this.btnFill.Name = "btnFill";
-            this.btnFill.Size = new System.Drawing.Size(75, 23);
+            this.btnFill.Size = new System.Drawing.Size(48, 48);
             this.btnFill.TabIndex = 2;
             this.btnFill.Tag = "Fill";
-            this.btnFill.Text = "Fill";
+            this.btnFill.Text = "F";
             this.btnFill.UseVisualStyleBackColor = true;
             // 
             // btnLine
             // 
-            this.btnLine.Location = new System.Drawing.Point(84, 32);
+            this.btnLine.Location = new System.Drawing.Point(7, 169);
+            this.btnLine.Margin = new System.Windows.Forms.Padding(3);
             this.btnLine.Name = "btnLine";
-            this.btnLine.Size = new System.Drawing.Size(75, 23);
+            this.btnLine.Size = new System.Drawing.Size(48, 48);
             this.btnLine.TabIndex = 3;
             this.btnLine.Tag = "Line";
-            this.btnLine.Text = "Line";
+            this.btnLine.Text = "L";
             this.btnLine.UseVisualStyleBackColor = true;
             // 
             // btnRectangle
             // 
-            this.btnRectangle.Location = new System.Drawing.Point(3, 61);
+            this.btnRectangle.Location = new System.Drawing.Point(7, 223);
+            this.btnRectangle.Margin = new System.Windows.Forms.Padding(3);
             this.btnRectangle.Name = "btnRectangle";
-            this.btnRectangle.Size = new System.Drawing.Size(75, 23);
+            this.btnRectangle.Size = new System.Drawing.Size(48, 48);
             this.btnRectangle.TabIndex = 4;
             this.btnRectangle.Tag = "Rectangle";
-            this.btnRectangle.Text = "Rectangle";
+            this.btnRectangle.Text = "R";
             this.btnRectangle.UseVisualStyleBackColor = true;
             // 
             // btnEllipse
             // 
-            this.btnEllipse.Location = new System.Drawing.Point(84, 61);
+            this.btnEllipse.Location = new System.Drawing.Point(7, 277);
+            this.btnEllipse.Margin = new System.Windows.Forms.Padding(3);
             this.btnEllipse.Name = "btnEllipse";
-            this.btnEllipse.Size = new System.Drawing.Size(75, 23);
+            this.btnEllipse.Size = new System.Drawing.Size(48, 48);
             this.btnEllipse.TabIndex = 5;
             this.btnEllipse.Tag = "Ellipse";
-            this.btnEllipse.Text = "Ellipse";
+            this.btnEllipse.Text = "O";
             this.btnEllipse.UseVisualStyleBackColor = true;
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(3, 90);
+            this.btnSelect.Location = new System.Drawing.Point(7, 331);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(3);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.Size = new System.Drawing.Size(48, 48);
             this.btnSelect.TabIndex = 6;
             this.btnSelect.Tag = "Select";
-            this.btnSelect.Text = "Select";
+            this.btnSelect.Text = "S";
             this.btnSelect.UseVisualStyleBackColor = true;
             // 
             // btnEyedropper
             // 
-            this.btnEyedropper.Location = new System.Drawing.Point(84, 90);
+            this.btnEyedropper.Location = new System.Drawing.Point(7, 385);
+            this.btnEyedropper.Margin = new System.Windows.Forms.Padding(3);
             this.btnEyedropper.Name = "btnEyedropper";
-            this.btnEyedropper.Size = new System.Drawing.Size(75, 23);
+            this.btnEyedropper.Size = new System.Drawing.Size(48, 48);
             this.btnEyedropper.TabIndex = 7;
             this.btnEyedropper.Tag = "Eyedropper";
-            this.btnEyedropper.Text = "Eyedropper";
+            this.btnEyedropper.Text = "I";
             this.btnEyedropper.UseVisualStyleBackColor = true;
             // 
             // ToolWindowControl
@@ -142,8 +153,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Dock = System.Windows.Forms.DockStyle.Left;
             this.Name = "ToolWindowControl";
-            this.Size = new System.Drawing.Size(170, 150);
+            this.Size = new System.Drawing.Size(60, 300);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

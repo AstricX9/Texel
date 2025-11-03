@@ -19,6 +19,7 @@ namespace Texel.Classes
         // UI settings
         public bool ShowGrid { get; set; } = true;
         public bool UseDarkTheme { get; set; } = false;
+        public bool UseGpuPreview { get; set; } = false; // New: GPU preview toggle
         
         // File paths
         public string LastProjectDirectory { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);

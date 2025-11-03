@@ -42,6 +42,7 @@
             this.tabAppearance = new System.Windows.Forms.TabPage();
             this.chkDarkTheme = new System.Windows.Forms.CheckBox();
             this.chkShowGrid = new System.Windows.Forms.CheckBox();
+            this.chkGpuPreview = new System.Windows.Forms.CheckBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -182,6 +183,7 @@
             // 
             this.tabAppearance.Controls.Add(this.chkDarkTheme);
             this.tabAppearance.Controls.Add(this.chkShowGrid);
+            this.tabAppearance.Controls.Add(this.chkGpuPreview);
             this.tabAppearance.Location = new System.Drawing.Point(4, 22);
             this.tabAppearance.Name = "tabAppearance";
             this.tabAppearance.Padding = new System.Windows.Forms.Padding(3);
@@ -209,6 +211,16 @@
             this.chkShowGrid.TabIndex = 0;
             this.chkShowGrid.Text = "Show Grid";
             this.chkShowGrid.UseVisualStyleBackColor = true;
+            // 
+            // chkGpuPreview
+            // 
+            this.chkGpuPreview.AutoSize = true;
+            this.chkGpuPreview.Location = new System.Drawing.Point(6, 62);
+            this.chkGpuPreview.Name = "chkGpuPreview";
+            this.chkGpuPreview.Size = new System.Drawing.Size(141, 17);
+            this.chkGpuPreview.TabIndex = 2;
+            this.chkGpuPreview.Text = "Use GPU Preview (GL)";
+            this.chkGpuPreview.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
@@ -278,5 +290,6 @@
         private System.Windows.Forms.CheckBox chkAutoSave;
         private System.Windows.Forms.CheckBox chkDarkTheme;
         private System.Windows.Forms.CheckBox chkShowGrid;
+        private System.Windows.Forms.CheckBox chkGpuPreview;
     }
 }

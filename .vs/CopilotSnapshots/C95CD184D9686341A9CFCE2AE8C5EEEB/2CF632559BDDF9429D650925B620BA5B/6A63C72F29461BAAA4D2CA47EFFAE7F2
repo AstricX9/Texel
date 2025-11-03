@@ -1,0 +1,70 @@
+﻿namespace Texel.Dialogs
+{
+ partial class ProjectTexturesForm
+ {
+ private System.ComponentModel.IContainer components = null;
+ private System.Windows.Forms.TreeView tree;
+ private System.Windows.Forms.PictureBox imagePreview;
+ private System.Windows.Forms.Button btnOpen;
+
+ protected override void Dispose(bool disposing)
+ {
+ if (disposing && (components != null))
+ {
+ components.Dispose();
+ }
+ base.Dispose(disposing);
+ }
+
+ private void InitializeComponent()
+ {
+ this.tree = new System.Windows.Forms.TreeView();
+ this.imagePreview = new System.Windows.Forms.PictureBox();
+ this.btnOpen = new System.Windows.Forms.Button();
+ ((System.ComponentModel.ISupportInitialize)(this.imagePreview)).BeginInit();
+ this.SuspendLayout();
+ // 
+ // tree
+ // 
+ this.tree.Location = new System.Drawing.Point(12,12);
+ this.tree.Name = "tree";
+ this.tree.Size = new System.Drawing.Size(280,500);
+ this.tree.TabIndex =0;
+ this.tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tree_AfterSelect);
+ this.tree.DoubleClick += new System.EventHandler(this.tree_DoubleClick);
+ // 
+ // imagePreview
+ // 
+ this.imagePreview.Location = new System.Drawing.Point(298,12);
+ this.imagePreview.Name = "imagePreview";
+ this.imagePreview.Size = new System.Drawing.Size(300,300);
+ this.imagePreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+ this.imagePreview.TabIndex =1;
+ this.imagePreview.TabStop = false;
+ // 
+ // btnOpen
+ // 
+ this.btnOpen.Enabled = false;
+ this.btnOpen.Location = new System.Drawing.Point(298,318);
+ this.btnOpen.Name = "btnOpen";
+ this.btnOpen.Size = new System.Drawing.Size(94,29);
+ this.btnOpen.TabIndex =2;
+ this.btnOpen.Text = "Open";
+ this.btnOpen.UseVisualStyleBackColor = true;
+ this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+ // 
+ // ProjectTexturesForm
+ // 
+ this.AutoScaleDimensions = new System.Drawing.SizeF(8F,20F);
+ this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+ this.ClientSize = new System.Drawing.Size(610,526);
+ this.Controls.Add(this.btnOpen);
+ this.Controls.Add(this.imagePreview);
+ this.Controls.Add(this.tree);
+ this.Name = "ProjectTexturesForm";
+ this.Text = "Project Textures";
+ ((System.ComponentModel.ISupportInitialize)(this.imagePreview)).EndInit();
+ this.ResumeLayout(false);
+ }
+ }
+}

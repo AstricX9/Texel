@@ -87,6 +87,7 @@ namespace Texel.Dialogs
             // UI settings
             chkShowGrid.Checked = _settings.ShowGrid;
             chkDarkTheme.Checked = _settings.UseDarkTheme;
+            chkGpuPreview.Checked = _settings.UseGpuPreview;
         }
         
         private void btnOK_Click(object sender, EventArgs e)
@@ -98,6 +99,7 @@ namespace Texel.Dialogs
             UpdatedSettings.AutoSaveIntervalMinutes = (int)numAutoSaveInterval.Value;
             UpdatedSettings.ShowGrid = chkShowGrid.Checked;
             UpdatedSettings.UseDarkTheme = chkDarkTheme.Checked;
+            UpdatedSettings.UseGpuPreview = chkGpuPreview.Checked;
             
             DialogResult = DialogResult.OK;
             Close();

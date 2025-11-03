@@ -54,7 +54,7 @@
             this.openInExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toggleGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textureBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectTexturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -65,7 +65,7 @@
             this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolWindowControl1 = new Texel.ToolWindowControl();
-            this.pixelCanvasControl1 = new Texel.PixelCanvasControl();
+            this.tabControlEditors = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -274,7 +274,7 @@
             // 
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toggleGridToolStripMenuItem,
-            this.textureBrowserToolStripMenuItem});
+            this.projectTexturesToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
             this.windowToolStripMenuItem.Text = "Window";
@@ -288,12 +288,12 @@
             this.toggleGridToolStripMenuItem.Checked = true;
             this.toggleGridToolStripMenuItem.Click += new System.EventHandler(this.toggleGridToolStripMenuItem_Click);
             // 
-            // textureBrowserToolStripMenuItem
+            // projectTexturesToolStripMenuItem
             // 
-            this.textureBrowserToolStripMenuItem.Name = "textureBrowserToolStripMenuItem";
-            this.textureBrowserToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.textureBrowserToolStripMenuItem.Text = "Texture Browser";
-            this.textureBrowserToolStripMenuItem.Click += new System.EventHandler(this.textureBrowserToolStripMenuItem_Click);
+            this.projectTexturesToolStripMenuItem.Name = "projectTexturesToolStripMenuItem";
+            this.projectTexturesToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.projectTexturesToolStripMenuItem.Text = "Project Textures";
+            this.projectTexturesToolStripMenuItem.Click += new System.EventHandler(this.projectTexturesToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -366,9 +366,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.pixelCanvasControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.tabControlEditors);
             this.splitContainer1.Size = new System.Drawing.Size(1200, 637);
-            this.splitContainer1.SplitterDistance = 400;
+            this.splitContainer1.SplitterDistance = 220;
             this.splitContainer1.TabIndex = 4;
             // 
             // toolWindowControl1
@@ -377,19 +377,17 @@
             this.toolWindowControl1.Location = new System.Drawing.Point(0, 0);
             this.toolWindowControl1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.toolWindowControl1.Name = "toolWindowControl1";
-            this.toolWindowControl1.Size = new System.Drawing.Size(400, 637);
+            this.toolWindowControl1.Size = new System.Drawing.Size(220, 637);
             this.toolWindowControl1.TabIndex = 1;
             // 
-            // pixelCanvasControl1
+            // tabControlEditors
             // 
-            this.pixelCanvasControl1.CurrentTool = Texel.ToolMode.Pen;
-            this.pixelCanvasControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pixelCanvasControl1.Location = new System.Drawing.Point(0, 0);
-            this.pixelCanvasControl1.Name = "pixelCanvasControl1";
-            this.pixelCanvasControl1.PanOffset = new System.Drawing.Point(0, 0);
-            this.pixelCanvasControl1.SelectedColor = System.Drawing.Color.Black;
-            this.pixelCanvasControl1.Size = new System.Drawing.Size(796, 637);
-            this.pixelCanvasControl1.TabIndex = 0;
+            this.tabControlEditors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlEditors.Location = new System.Drawing.Point(0, 0);
+            this.tabControlEditors.Name = "tabControlEditors";
+            this.tabControlEditors.SelectedIndex = 0;
+            this.tabControlEditors.Size = new System.Drawing.Size(976, 637);
+            this.tabControlEditors.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -403,7 +401,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Texel";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -420,7 +418,6 @@
 
         #endregion
 
-        private PixelCanvasControl pixelCanvasControl1;
         private ToolWindowControl toolWindowControl1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -449,7 +446,7 @@
         private System.Windows.Forms.ToolStripMenuItem openInExplorerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toggleGridToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem textureBrowserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem projectTexturesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -459,6 +456,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolLabel;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TabControl tabControlEditors;
     }
 }
 

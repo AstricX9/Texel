@@ -3,7 +3,42 @@
   "WorkspaceRootPath": "G:\\Texel\\Texel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|g:\\texel\\texel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Texel||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|g:\\texel\\texel\\dialogs\\projecttexturesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\projecttexturesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|g:\\texel\\texel\\dialogs\\projecttexturesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\projecttexturesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|g:\\texel\\texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\textinputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\textinputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\texturepathdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\texturepathdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\resizecanvasdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\resizecanvasdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\newpackdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\newpackdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,32 +46,8 @@
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\minecraftassetsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\texturebrowserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\texturebrowserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\texturebrowserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\texturebrowserform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\texturebrowserform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\texturebrowserform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\texturepathdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\texturepathdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\classes\\idrawingtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,20 +70,8 @@
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\settingsdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\newpackdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\newpackdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\resizecanvasdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\resizecanvasdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\texturepathdialog.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\texturepathdialog.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\textinputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\textinputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\dialogs\\textinputdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -173,6 +172,16 @@
     {
       "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|G:\\Texel\\Texel\\usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\danie\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1971690566\\TextureBrowserForm.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|g:\\texel\\texel\\classes\\rendering\\texturebuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:classes\\rendering\\texturebuffer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|g:\\texel\\texel\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|a54ad834-9219-4aa6-b589-607af21c3e26"
     }
   ],
   "DocumentGroupContainers": [
@@ -182,23 +191,149 @@
       "DocumentGroups": [
         {
           "DockedHeight": 236,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Texel",
+              "DocumentMoniker": "G:\\Texel\\Texel\\Texel.csproj",
+              "RelativeDocumentMoniker": "Texel.csproj",
+              "ToolTip": "G:\\Texel\\Texel\\Texel.csproj",
+              "RelativeToolTip": "Texel.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-03T12:19:25.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "TextureBuffer.cs",
+              "DocumentMoniker": "G:\\Texel\\Texel\\Classes\\Rendering\\TextureBuffer.cs",
+              "RelativeDocumentMoniker": "Classes\\Rendering\\TextureBuffer.cs",
+              "ToolTip": "G:\\Texel\\Texel\\Classes\\Rendering\\TextureBuffer.cs",
+              "RelativeToolTip": "Classes\\Rendering\\TextureBuffer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T12:07:11.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "TextureBrowserForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1971690566\\TextureBrowserForm.Designer.cs",
+              "ToolTip": "C:\\Users\\danie\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1971690566\\TextureBrowserForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:57:01.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ProjectTexturesForm.cs [Design]",
+              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\ProjectTexturesForm.cs",
+              "RelativeDocumentMoniker": "Dialogs\\ProjectTexturesForm.cs",
+              "ToolTip": "G:\\Texel\\Texel\\Dialogs\\ProjectTexturesForm.cs [Design]",
+              "RelativeToolTip": "Dialogs\\ProjectTexturesForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:51:03.969Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectTexturesForm.cs",
+              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\ProjectTexturesForm.cs",
+              "RelativeDocumentMoniker": "Dialogs\\ProjectTexturesForm.cs",
+              "ToolTip": "G:\\Texel\\Texel\\Dialogs\\ProjectTexturesForm.cs",
+              "RelativeToolTip": "Dialogs\\ProjectTexturesForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T11:46:14.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TextInputDialog.cs [Design]",
+              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\TextInputDialog.cs",
+              "RelativeDocumentMoniker": "Dialogs\\TextInputDialog.cs",
+              "ToolTip": "G:\\Texel\\Texel\\Dialogs\\TextInputDialog.cs [Design]",
+              "RelativeToolTip": "Dialogs\\TextInputDialog.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T00:08:27.81Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "G:\\Texel\\Texel\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "G:\\Texel\\Texel\\MainForm.cs [Design]",
+              "RelativeToolTip": "MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T06:10:27.712Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TexturePathDialog.cs [Design]",
+              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\TexturePathDialog.cs",
+              "RelativeDocumentMoniker": "Dialogs\\TexturePathDialog.cs",
+              "ToolTip": "G:\\Texel\\Texel\\Dialogs\\TexturePathDialog.cs [Design]",
+              "RelativeToolTip": "Dialogs\\TexturePathDialog.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T00:07:37.623Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "G:\\Texel\\Texel\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "MainForm.Designer.cs",
               "ToolTip": "G:\\Texel\\Texel\\MainForm.Designer.cs",
               "RelativeToolTip": "MainForm.Designer.cs",
-              "ViewState": "AgIAALcBAAAAAAAAAAAYwM0BAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAM4BAAAAAAAAAAAAAM4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:37:25.352Z"
+              "WhenOpened": "2025-06-19T23:37:25.352Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
+              "Title": "ResizeCanvasDialog.cs [Design]",
+              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\ResizeCanvasDialog.cs",
+              "RelativeDocumentMoniker": "Dialogs\\ResizeCanvasDialog.cs",
+              "ToolTip": "G:\\Texel\\Texel\\Dialogs\\ResizeCanvasDialog.cs [Design]",
+              "RelativeToolTip": "Dialogs\\ResizeCanvasDialog.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T23:57:23.752Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NewPackDialog.cs [Design]",
+              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\NewPackDialog.cs",
+              "RelativeDocumentMoniker": "Dialogs\\NewPackDialog.cs",
+              "ToolTip": "G:\\Texel\\Texel\\Dialogs\\NewPackDialog.cs [Design]",
+              "RelativeToolTip": "Dialogs\\NewPackDialog.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T23:32:45.413Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "MinecraftAssetsService.cs",
               "DocumentMoniker": "G:\\Texel\\Texel\\Classes\\MinecraftAssetsService.cs",
               "RelativeDocumentMoniker": "Classes\\MinecraftAssetsService.cs",
@@ -206,43 +341,12 @@
               "RelativeToolTip": "Classes\\MinecraftAssetsService.cs",
               "ViewState": "AgIAAKMAAAAAAAAAAAAowL0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:21:34.898Z"
+              "WhenOpened": "2025-06-20T00:21:34.898Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "G:\\Texel\\Texel\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:10:27.712Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TextureBrowserForm.cs",
-              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\TextureBrowserForm.cs",
-              "RelativeDocumentMoniker": "Dialogs\\TextureBrowserForm.cs",
-              "ToolTip": "G:\\Texel\\Texel\\Dialogs\\TextureBrowserForm.cs",
-              "RelativeToolTip": "Dialogs\\TextureBrowserForm.cs",
-              "ViewState": "AgIAAOcAAAAAAAAAAAAQwA8BAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T01:55:18.999Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TextureBrowserForm.cs [Design]",
-              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\TextureBrowserForm.cs",
-              "RelativeDocumentMoniker": "Dialogs\\TextureBrowserForm.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\TextureBrowserForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T01:55:08.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "G:\\Texel\\Texel\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -255,41 +359,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "MainForm.cs",
               "DocumentMoniker": "G:\\Texel\\Texel\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "G:\\Texel\\Texel\\MainForm.cs",
               "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAtwCsAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAK8CAAAAAAAAAABRwEEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:42:18.172Z"
+              "WhenOpened": "2025-06-19T09:42:18.172Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TextureBrowserForm.Designer.cs",
-              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\TextureBrowserForm.Designer.cs",
-              "RelativeDocumentMoniker": "Dialogs\\TextureBrowserForm.Designer.cs",
-              "ToolTip": "G:\\Texel\\Texel\\Dialogs\\TextureBrowserForm.Designer.cs",
-              "RelativeToolTip": "Dialogs\\TextureBrowserForm.Designer.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T01:56:46.123Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TexturePathDialog.cs [Design]",
-              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\TexturePathDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\TexturePathDialog.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\TexturePathDialog.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:07:37.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "IDrawingTool.cs",
               "DocumentMoniker": "G:\\Texel\\Texel\\Classes\\IDrawingTool.cs",
               "RelativeDocumentMoniker": "Classes\\IDrawingTool.cs",
@@ -297,23 +380,25 @@
               "RelativeToolTip": "Classes\\IDrawingTool.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T08:17:02.774Z"
+              "WhenOpened": "2025-06-19T08:17:02.774Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "SettingsDialog.cs",
               "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\SettingsDialog.cs",
               "RelativeDocumentMoniker": "Dialogs\\SettingsDialog.cs",
               "ToolTip": "G:\\Texel\\Texel\\Dialogs\\SettingsDialog.cs",
               "RelativeToolTip": "Dialogs\\SettingsDialog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAHQAAAAAAAAAAABRwAMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:58:36.222Z"
+              "WhenOpened": "2025-06-19T23:58:36.222Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "ProjectService.cs",
               "DocumentMoniker": "G:\\Texel\\Texel\\Classes\\ProjectService.cs",
               "RelativeDocumentMoniker": "Classes\\ProjectService.cs",
@@ -321,29 +406,21 @@
               "RelativeToolTip": "Classes\\ProjectService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:17:39.058Z"
+              "WhenOpened": "2025-06-19T23:17:39.058Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "packages.config",
               "DocumentMoniker": "G:\\Texel\\Texel\\packages.config",
               "RelativeDocumentMoniker": "packages.config",
               "ToolTip": "G:\\Texel\\Texel\\packages.config",
               "RelativeToolTip": "packages.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAABBwAYAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-06-19T23:35:49.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "TextInputDialog.cs [Design]",
-              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\TextInputDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\TextInputDialog.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\TextInputDialog.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:08:27.81Z"
+              "WhenOpened": "2025-06-19T23:35:49.486Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -355,7 +432,8 @@
               "RelativeToolTip": "Dialogs\\TextInputDialog.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAtwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:09:06.163Z"
+              "WhenOpened": "2025-06-20T00:09:06.163Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -367,11 +445,12 @@
               "RelativeToolTip": "Dialogs\\TextInputDialog.Designer.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAADwvwMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:08:40.735Z"
+              "WhenOpened": "2025-06-20T00:08:40.735Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "TexturePathDialog.Designer.cs",
               "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\TexturePathDialog.Designer.cs",
               "RelativeDocumentMoniker": "Dialogs\\TexturePathDialog.Designer.cs",
@@ -379,7 +458,8 @@
               "RelativeToolTip": "Dialogs\\TexturePathDialog.Designer.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAA5wAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:08:05.785Z"
+              "WhenOpened": "2025-06-20T00:08:05.785Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -391,7 +471,8 @@
               "RelativeToolTip": "Dialogs\\TexturePathDialog.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:07:39.587Z"
+              "WhenOpened": "2025-06-20T00:07:39.587Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -401,9 +482,10 @@
               "RelativeDocumentMoniker": "Classes\\AppSettings.cs",
               "ToolTip": "G:\\Texel\\Texel\\Classes\\AppSettings.cs",
               "RelativeToolTip": "Classes\\AppSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAABRwAUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T00:05:12.774Z"
+              "WhenOpened": "2025-06-20T00:05:12.774Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -413,19 +495,22 @@
               "RelativeDocumentMoniker": "Dialogs\\SettingsDialog.Designer.cs",
               "ToolTip": "G:\\Texel\\Texel\\Dialogs\\SettingsDialog.Designer.cs",
               "RelativeToolTip": "Dialogs\\SettingsDialog.Designer.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAUwB0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACIBAAAAAAAAAEBVwBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:58:54.352Z"
+              "WhenOpened": "2025-06-19T23:58:54.352Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "SettingsDialog.cs [Design]",
               "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\SettingsDialog.cs",
               "RelativeDocumentMoniker": "Dialogs\\SettingsDialog.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\SettingsDialog.cs [Design]",
+              "ToolTip": "G:\\Texel\\Texel\\Dialogs\\SettingsDialog.cs [Design]",
+              "RelativeToolTip": "Dialogs\\SettingsDialog.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:58:33.932Z"
+              "WhenOpened": "2025-06-19T23:58:33.932Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -437,7 +522,8 @@
               "RelativeToolTip": "Dialogs\\ResizeCanvasDialog.Designer.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:57:47.729Z"
+              "WhenOpened": "2025-06-19T23:57:47.729Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -449,17 +535,8 @@
               "RelativeToolTip": "Dialogs\\ResizeCanvasDialog.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAqwAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:57:29.03Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ResizeCanvasDialog.cs [Design]",
-              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\ResizeCanvasDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\ResizeCanvasDialog.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\ResizeCanvasDialog.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:57:23.752Z"
+              "WhenOpened": "2025-06-19T23:57:29.03Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -469,9 +546,10 @@
               "RelativeDocumentMoniker": "UserControls\\ToolWindowControl.Designer.cs",
               "ToolTip": "G:\\Texel\\Texel\\UserControls\\ToolWindowControl.Designer.cs",
               "RelativeToolTip": "UserControls\\ToolWindowControl.Designer.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAAAJsAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAKwAAAAAAAAAAEBVwLAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:48:50.925Z"
+              "WhenOpened": "2025-06-19T23:48:50.925Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -483,7 +561,8 @@
               "RelativeToolTip": "Classes\\Tools\\EyedropperTool.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAADgvwMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:46:18.884Z"
+              "WhenOpened": "2025-06-19T23:46:18.884Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -495,7 +574,8 @@
               "RelativeToolTip": "Classes\\Tools\\LineTool.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:45:40.265Z"
+              "WhenOpened": "2025-06-19T23:45:40.265Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -507,7 +587,8 @@
               "RelativeToolTip": "Dialogs\\NewPackDialog.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:34:29.567Z"
+              "WhenOpened": "2025-06-19T23:34:29.567Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -519,17 +600,8 @@
               "RelativeToolTip": "Dialogs\\NewPackDialog.Designer.cs",
               "ViewState": "AgIAAGwAAAAAAAAAAAAowHQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:32:55.734Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "NewPackDialog.cs [Design]",
-              "DocumentMoniker": "G:\\Texel\\Texel\\Dialogs\\NewPackDialog.cs",
-              "RelativeDocumentMoniker": "Dialogs\\NewPackDialog.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\NewPackDialog.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:32:45.413Z"
+              "WhenOpened": "2025-06-19T23:32:55.734Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -541,7 +613,8 @@
               "RelativeToolTip": "Classes\\MinecraftPacks.cs",
               "ViewState": "AgIAAFIAAAAAAAAAAAAwwAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:14:17.151Z"
+              "WhenOpened": "2025-06-19T23:14:17.151Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -551,9 +624,10 @@
               "RelativeDocumentMoniker": "UserControls\\PixelCanvasControl.cs",
               "ToolTip": "G:\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
               "RelativeToolTip": "UserControls\\PixelCanvasControl.cs",
-              "ViewState": "AgIAAPYBAAAAAAAAAADgvwgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHUDAAAAAAAAAIBZwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:12:49.985Z"
+              "WhenOpened": "2025-06-19T06:12:49.985Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -561,9 +635,11 @@
               "Title": "PixelCanvasControl.cs [Design]",
               "DocumentMoniker": "G:\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs",
               "RelativeDocumentMoniker": "UserControls\\PixelCanvasControl.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\UserControls\\PixelCanvasControl.cs [Design]",
+              "ToolTip": "G:\\Texel\\Texel\\UserControls\\PixelCanvasControl.cs [Design]",
+              "RelativeToolTip": "UserControls\\PixelCanvasControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:12:45.188Z"
+              "WhenOpened": "2025-06-19T06:12:45.188Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -575,7 +651,8 @@
               "RelativeToolTip": "Classes\\Tools\\SelectTool.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAD4vyAAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:15:56.375Z"
+              "WhenOpened": "2025-06-19T09:15:56.375Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -587,7 +664,8 @@
               "RelativeToolTip": "Classes\\Tools\\EllipseTool.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAewAcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:15:25.13Z"
+              "WhenOpened": "2025-06-19T09:15:25.13Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -599,7 +677,8 @@
               "RelativeToolTip": "Classes\\Tools\\RectangleTool.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwCoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:15:02.242Z"
+              "WhenOpened": "2025-06-19T09:15:02.242Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -611,7 +690,8 @@
               "RelativeToolTip": "Classes\\Tools\\EraserTool.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:14:45.253Z"
+              "WhenOpened": "2025-06-19T09:14:45.253Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -619,9 +699,11 @@
               "Title": "ToolWindowControl.cs [Design]",
               "DocumentMoniker": "G:\\Texel\\Texel\\UserControls\\ToolWindowControl.cs",
               "RelativeDocumentMoniker": "UserControls\\ToolWindowControl.cs",
-              "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\UserControls\\ToolWindowControl.cs [Design]",
+              "ToolTip": "G:\\Texel\\Texel\\UserControls\\ToolWindowControl.cs [Design]",
+              "RelativeToolTip": "UserControls\\ToolWindowControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T08:20:51.572Z"
+              "WhenOpened": "2025-06-19T08:20:51.572Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -633,7 +715,8 @@
               "RelativeToolTip": "Classes\\Tools\\PenTool.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T08:17:26.023Z"
+              "WhenOpened": "2025-06-19T08:17:26.023Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -645,7 +728,8 @@
               "RelativeToolTip": "Classes\\Tools\\FillTool.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:14:23.27Z"
+              "WhenOpened": "2025-06-19T09:14:23.27Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -655,9 +739,10 @@
               "RelativeDocumentMoniker": "UserControls\\ToolWindowControl.cs",
               "ToolTip": "G:\\Texel\\Texel\\UserControls\\ToolWindowControl.cs",
               "RelativeToolTip": "UserControls\\ToolWindowControl.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAwwB4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAABRwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:08:14.458Z"
+              "WhenOpened": "2025-06-19T09:08:14.458Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -669,7 +754,8 @@
               "RelativeToolTip": "Classes\\Input\\InputHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T08:06:02.812Z"
+              "WhenOpened": "2025-06-19T08:06:02.812Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -681,7 +767,8 @@
               "RelativeToolTip": "Classes\\UndoManager.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAA2wKgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:44:37.019Z"
+              "WhenOpened": "2025-06-19T23:44:37.019Z",
+              "EditorCaption": ""
             }
           ]
         }

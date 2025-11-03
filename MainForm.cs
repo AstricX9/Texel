@@ -17,11 +17,11 @@ namespace Texel
 {
     public partial class MainForm : Form
     {
-        private InputHandler _inputHandler;
+        private readonly Dictionary<PixelCanvasControl, InputHandler> _inputHandlers = new Dictionary<PixelCanvasControl, InputHandler>();
         private ProjectService _projectService;
         private MinecraftAssetsService _assetsService;
         private List<ToolStripMenuItem> _recentProjectMenuItems = new List<ToolStripMenuItem>();
-        private TextureBrowserForm _textureBrowser;
+        private ProjectTexturesForm _projectTextures; // organized project textures viewer
 
         public MainForm()
         {
@@ -31,25 +31,61 @@ namespace Texel
             _projectService = new ProjectService();
             _assetsService = new MinecraftAssetsService();
             
-            // Initialize input handler
-            _inputHandler = new InputHandler(pixelCanvasControl1);
-            
             // Set up events
             _projectService.ProjectLoaded += OnProjectLoaded;
             _projectService.ProjectSaved += OnProjectSaved;
+            _project_service_error_events();
+        }
+
+        private void _project_service_error_events()
+        {
             _projectService.ErrorOccurred += OnErrorOccurred;
-            this.toggleGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toggleGridToolStripMenuItem.Name = "toggleGridToolStripMenuItem";
-            this.toggleGridToolStripMenuItem.Text = "Toggle Grid";
-            this.toggleGridToolStripMenuItem.CheckOnClick = true;
+        }
+
+        private PixelCanvasControl ActiveCanvas
+        {
+            get
+            {
+                if (tabControlEditors.SelectedTab == null) return null;
+                return tabControlEditors.SelectedTab.Controls.OfType<PixelCanvasControl>().FirstOrDefault();
+            }
+        }
+
+        private IEnumerable<PixelCanvasControl> AllCanvases()
+        {
+            foreach (TabPage tab in tabControlEditors.TabPages)
+            {
+                var canvas = tab.Controls.OfType<PixelCanvasControl>().FirstOrDefault();
+                if (canvas != null) yield return canvas;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             toolWindowControl1.ToolChanged += tool =>
             {
-                pixelCanvasControl1.CurrentTool = tool;
+                var canvas = ActiveCanvas;
+                if (canvas != null)
+                {
+                    canvas.CurrentTool = tool;
+                    UpdateStatusBar();
+                }
             };
+
+            tabControlEditors.SelectedIndexChanged += (s, ev) =>
+            {
+                UpdateStatusBar();
+                UpdateUndoRedoState();
+                // Sync grid toggle to active canvas
+                var canvas = ActiveCanvas;
+                if (canvas != null)
+                {
+                    toggleGridToolStripMenuItem.Checked = canvas.ShowGrid;
+                }
+            };
+            
+            // Start with an empty canvas tab
+            CreateEditorTab("Untitled", null,64,64);
             
             // Update status bar
             UpdateStatusBar();
@@ -63,23 +99,20 @@ namespace Texel
             // Update UI based on loaded project
             Text = $"Texel - {pack.Name}";
             
-            // If opening an empty project, set grid size to match resolution
-            if (pixelCanvasControl1.GridWidth != pack.Resolution || 
-                pixelCanvasControl1.GridHeight != pack.Resolution)
+            // Ensure an editor tab exists and matches resolution
+            var canvas = ActiveCanvas ?? CreateEditorTab(pack.Name, null, pack.Resolution, pack.Resolution);
+            if (canvas.GridWidth != pack.Resolution || canvas.GridHeight != pack.Resolution)
             {
-                pixelCanvasControl1.SetGridSize(pack.Resolution, pack.Resolution);
+                canvas.SetGridSize(pack.Resolution, pack.Resolution);
             }
             
             // Refresh UI
             UpdateStatusBar();
             UpdateRecentProjectsMenu();
             
-            // Open the texture browser with this version
-            ShowTextureBrowser();
-            if (_textureBrowser != null && !_textureBrowser.IsDisposed)
-            {
-                _textureBrowser.RefreshBrowser(pack.Version);
-            }
+            // Open/refresh the project textures viewer for this pack
+            ShowProjectTexturesViewer();
+            _projectTextures?.RefreshViewer(pack);
         }
         
         private void OnProjectSaved(object sender, MinecraftPack pack)
@@ -101,9 +134,17 @@ namespace Texel
         
         private void UpdateStatusBar()
         {
-            coordsLabel.Text = $"Grid: {pixelCanvasControl1.GridWidth}x{pixelCanvasControl1.GridHeight}";
-            zoomLabel.Text = $"Zoom: {pixelCanvasControl1.CellSize}x";
-            toolLabel.Text = $"Tool: {pixelCanvasControl1.CurrentTool}";
+            var canvas = ActiveCanvas;
+            if (canvas == null)
+            {
+                coordsLabel.Text = "Grid: -";
+                zoomLabel.Text = "Zoom: -";
+                toolLabel.Text = "Tool: -";
+                return;
+            }
+            coordsLabel.Text = $"Grid: {canvas.GridWidth}x{canvas.GridHeight}";
+            zoomLabel.Text = $"Zoom: {canvas.CellSize}x";
+            toolLabel.Text = $"Tool: {canvas.CurrentTool}";
         }
         
         private void UpdateRecentProjectsMenu()
@@ -117,9 +158,9 @@ namespace Texel
             
             // Hide menu if no recent projects
             var recentProjects = _projectService.GetRecentProjects();
-            recentProjectsToolStripMenuItem.Visible = recentProjects.Count > 0;
+            recentProjectsToolStripMenuItem.Visible = recentProjects.Count >0;
             
-            if (recentProjects.Count == 0)
+            if (recentProjects.Count ==0)
                 return;
                 
             // Add new items
@@ -388,6 +429,9 @@ namespace Texel
                                     
                                     MessageBox.Show($"Texture imported to {targetPath}", "Import Complete", 
                                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    
+                                    // refresh project textures viewer
+                                    _projectTextures?.RefreshViewer(_projectService.CurrentPack);
                                 }
                             }
                         }
@@ -403,6 +447,13 @@ namespace Texel
 
         private void exportCurrentTextureToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var canvas = ActiveCanvas;
+            if (canvas == null)
+            {
+                MessageBox.Show("No texture open.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             using (var dialog = new SaveFileDialog())
             {
                 dialog.Filter = "PNG Image|*.png";
@@ -413,16 +464,16 @@ namespace Texel
                     try
                     {
                         // Create a bitmap from the pixel data
-                        int width = pixelCanvasControl1.GridWidth;
-                        int height = pixelCanvasControl1.GridHeight;
+                        int width = canvas.GridWidth;
+                        int height = canvas.GridHeight;
                         
                         using (var bmp = new Bitmap(width, height))
                         {
-                            for (int x = 0; x < width; x++)
+                            for (int x =0; x < width; x++)
                             {
-                                for (int y = 0; y < height; y++)
+                                for (int y =0; y < height; y++)
                                 {
-                                    bmp.SetPixel(x, y, pixelCanvasControl1.Pixels[x, y]);
+                                    bmp.SetPixel(x, y, canvas.Pixels[x, y]);
                                 }
                             }
                             
@@ -448,57 +499,64 @@ namespace Texel
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pixelCanvasControl1.CanUndo)
+            var canvas = ActiveCanvas;
+            if (canvas != null && canvas.CanUndo)
             {
-                pixelCanvasControl1.Undo();
+                canvas.Undo();
                 UpdateUndoRedoState();
             }
         }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pixelCanvasControl1.CanRedo)
+            var canvas = ActiveCanvas;
+            if (canvas != null && canvas.CanRedo)
             {
-                pixelCanvasControl1.Redo();
+                canvas.Redo();
                 UpdateUndoRedoState();
             }
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pixelCanvasControl1.CutSelection();
+            ActiveCanvas?.CutSelection();
         }
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pixelCanvasControl1.CopySelection();
+            ActiveCanvas?.CopySelection();
         }
 
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pixelCanvasControl1.PasteFromClipboard();
+            ActiveCanvas?.PasteFromClipboard();
         }
 
         private void UpdateUndoRedoState()
         {
-            undoToolStripMenuItem.Enabled = pixelCanvasControl1.CanUndo;
-            redoToolStripMenuItem.Enabled = pixelCanvasControl1.CanRedo;
+            var canvas = ActiveCanvas;
+            undoToolStripMenuItem.Enabled = canvas != null && canvas.CanUndo;
+            redoToolStripMenuItem.Enabled = canvas != null && canvas.CanRedo;
         }
 
         private void toggleGridToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pixelCanvasControl1.ShowGrid = !pixelCanvasControl1.ShowGrid;
-            toggleGridToolStripMenuItem.Checked = pixelCanvasControl1.ShowGrid;
-            pixelCanvasControl1.Invalidate();
+            var canvas = ActiveCanvas;
+            if (canvas == null) return;
+            canvas.ShowGrid = !canvas.ShowGrid;
+            toggleGridToolStripMenuItem.Checked = canvas.ShowGrid;
+            canvas.Invalidate();
         }
 
         private void resizeCanvasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var dialog = new ResizeCanvasDialog(pixelCanvasControl1.GridWidth, pixelCanvasControl1.GridHeight))
+            var canvas = ActiveCanvas;
+            if (canvas == null) return;
+            using (var dialog = new ResizeCanvasDialog(canvas.GridWidth, canvas.GridHeight))
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    pixelCanvasControl1.SetGridSize(dialog.NewWidth, dialog.NewHeight);
+                    canvas.SetGridSize(dialog.NewWidth, dialog.NewHeight);
                     UpdateStatusBar();
                 }
             }
@@ -516,9 +574,13 @@ namespace Texel
                     Classes.AppSettings.Save(dialog.UpdatedSettings);
                     
                     // Apply any immediate UI changes
-                    pixelCanvasControl1.ShowGrid = dialog.UpdatedSettings.ShowGrid;
-                    toggleGridToolStripMenuItem.Checked = dialog.UpdatedSettings.ShowGrid;
-                    pixelCanvasControl1.Invalidate();
+                    var canvas = ActiveCanvas;
+                    if (canvas != null)
+                    {
+                        canvas.ShowGrid = dialog.UpdatedSettings.ShowGrid;
+                        toggleGridToolStripMenuItem.Checked = dialog.UpdatedSettings.ShowGrid;
+                        canvas.Invalidate();
+                    }
                     
                     // Update auto-save settings if there's a current project
                     if (_projectService.CurrentPack != null)
@@ -526,37 +588,103 @@ namespace Texel
                         _projectService.CurrentPack.AutoSave = dialog.UpdatedSettings.AutoSaveEnabled;
                         _projectService.CurrentPack.AutoSaveInterval = dialog.UpdatedSettings.AutoSaveIntervalMinutes;
                     }
+                    
+                    // Apply GPU preview to all canvases
+                    foreach (var c in AllCanvases())
+                    {
+                        c.UseGpuPreview = dialog.UpdatedSettings.UseGpuPreview;
+                        c.Invalidate();
+                    }
                 }
             }
         }
 
-        private void ShowTextureBrowser()
+        private void ShowProjectTexturesViewer()
         {
-            if (_textureBrowser == null || _textureBrowser.IsDisposed)
+            if (_projectTextures == null || _projectTextures.IsDisposed)
             {
-                _textureBrowser = new TextureBrowserForm(_assetsService, pixelCanvasControl1);
-                _textureBrowser.TextureOpened += (sender, path) => {
+                _projectTextures = new ProjectTexturesForm();
+                _projectTextures.TextureOpened += (s, path) =>
+                {
+                    OpenTextureInNewTab(path);
                     statusLabel.Text = $"Opened texture: {Path.GetFileName(path)}";
                 };
             }
-            
-            if (!_textureBrowser.Visible)
+            if (!_projectTextures.Visible)
             {
-                _textureBrowser.Show(this);
-                
-                // Set browser to use current pack's version if available
-                if (_projectService.CurrentPack != null)
-                {
-                    _textureBrowser.RefreshBrowser(_projectService.CurrentPack.Version);
-                }
+                _projectTextures.Show(this);
             }
-            
-            _textureBrowser.BringToFront();
+            _projectTextures.BringToFront();
         }
 
-        private void textureBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+        private void projectTexturesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowTextureBrowser();
+            if (_projectService.CurrentPack == null)
+            {
+                MessageBox.Show("Please open or create a project first.", "No Project", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            ShowProjectTexturesViewer();
+            _projectTextures?.RefreshViewer(_projectService.CurrentPack);
+        }
+
+        private PixelCanvasControl CreateEditorTab(string title, Bitmap image, int defaultWidth =64, int defaultHeight =64)
+        {
+            var canvas = new PixelCanvasControl
+            {
+                Dock = DockStyle.Fill
+            };
+
+            if (image != null)
+            {
+                canvas.SetGridSize(image.Width, image.Height);
+                for (int x =0; x < image.Width; x++)
+                {
+                    for (int y =0; y < image.Height; y++)
+                    {
+                        canvas.Pixels[x, y] = image.GetPixel(x, y);
+                    }
+                }
+            }
+            else
+            {
+                canvas.SetGridSize(defaultWidth, defaultHeight);
+            }
+
+            // Apply current settings for GPU preview
+            var settings = Classes.AppSettings.Load();
+            canvas.UseGpuPreview = settings.UseGpuPreview;
+
+            var tab = new TabPage(title);
+            tab.Controls.Add(canvas);
+            tabControlEditors.TabPages.Add(tab);
+            tabControlEditors.SelectedTab = tab;
+
+            // Attach input handler for this canvas
+            var handler = new InputHandler(canvas);
+            _inputHandlers[canvas] = handler;
+
+            UpdateStatusBar();
+            UpdateUndoRedoState();
+            toggleGridToolStripMenuItem.Checked = canvas.ShowGrid;
+
+            return canvas;
+        }
+
+        private void OpenTextureInNewTab(string path)
+        {
+            try
+            {
+                using (var img = (Bitmap)Image.FromFile(path))
+                {
+                    var title = Path.GetFileName(path);
+                    CreateEditorTab(title, img);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening texture: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

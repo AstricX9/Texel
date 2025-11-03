@@ -1,0 +1,154 @@
+﻿using System;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
+using Texel.Models;
+
+namespace Texel.Dialogs
+{
+    public partial class ProjectTexturesForm : Form
+    {
+        public event EventHandler<string> TextureOpened;
+
+        // Controls (inline to avoid designer include issues)
+        private TreeView tree;
+        private PictureBox imagePreview;
+        private Button btnOpen;
+
+        public ProjectTexturesForm()
+        {
+            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            this.ShowInTaskbar = false;
+            this.FormClosing += (s, e) =>
+            {
+                if (e.CloseReason == CloseReason.UserClosing)
+                {
+                    e.Cancel = true;
+                    this.Hide();
+                }
+            };
+        }
+
+        private void InitializeComponent()
+        {
+            this.tree = new System.Windows.Forms.TreeView();
+            this.imagePreview = new System.Windows.Forms.PictureBox();
+            this.btnOpen = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.imagePreview)).BeginInit();
+            this.SuspendLayout();
+            // tree
+            this.tree.Location = new System.Drawing.Point(12, 12);
+            this.tree.Name = "tree";
+            this.tree.Size = new System.Drawing.Size(280, 500);
+            this.tree.TabIndex = 0;
+            this.tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tree_AfterSelect);
+            this.tree.DoubleClick += new System.EventHandler(this.tree_DoubleClick);
+            // imagePreview
+            this.imagePreview.Location = new System.Drawing.Point(298, 12);
+            this.imagePreview.Name = "imagePreview";
+            this.imagePreview.Size = new System.Drawing.Size(300, 300);
+            this.imagePreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagePreview.TabIndex = 1;
+            this.imagePreview.TabStop = false;
+            // btnOpen
+            this.btnOpen.Enabled = false;
+            this.btnOpen.Location = new System.Drawing.Point(298, 318);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(94, 29);
+            this.btnOpen.TabIndex = 2;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // Form
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(610, 526);
+            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.imagePreview);
+            this.Controls.Add(this.tree);
+            this.Name = "ProjectTexturesForm";
+            this.Text = "Project Textures";
+            ((System.ComponentModel.ISupportInitialize)(this.imagePreview)).EndInit();
+            this.ResumeLayout(false);
+        }
+
+        public void RefreshViewer(MinecraftPack pack)
+        {
+            if (pack == null) return;
+            tree.Nodes.Clear();
+            imagePreview.Image = null;
+
+            var texturesRoot = pack.GetTexturesPath();
+            if (!Directory.Exists(texturesRoot)) return;
+
+            var root = new TreeNode(Path.GetFileName(texturesRoot)) { Tag = texturesRoot };
+            AddDirectory(root, texturesRoot);
+            tree.Nodes.Add(root);
+            root.Expand();
+        }
+
+        private void AddDirectory(TreeNode parent, string path)
+        {
+            foreach (var dir in Directory.GetDirectories(path))
+            {
+                var dn = Path.GetFileName(dir);
+                var node = new TreeNode(dn) { Tag = dir };
+                AddDirectory(node, dir);
+                if (node.Nodes.Count > 0) parent.Nodes.Add(node);
+            }
+            foreach (var file in Directory.GetFiles(path, "*.png"))
+            {
+                parent.Nodes.Add(new TreeNode(Path.GetFileName(file)) { Tag = file });
+            }
+        }
+
+        private void tree_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var path = e.Node.Tag as string;
+            if (File.Exists(path) && Path.GetExtension(path).Equals(".png", StringComparison.OrdinalIgnoreCase))
+            {
+                try
+                {
+                    if (imagePreview.Image != null)
+                    {
+                        var old = imagePreview.Image; imagePreview.Image = null; old.Dispose();
+                    }
+                    imagePreview.Image = Image.FromFile(path);
+                    btnOpen.Enabled = true;
+                }
+                catch
+                {
+                    btnOpen.Enabled = false;
+                }
+            }
+            else
+            {
+                btnOpen.Enabled = false;
+                if (imagePreview.Image != null)
+                {
+                    var old = imagePreview.Image; imagePreview.Image = null; old.Dispose();
+                }
+            }
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            OpenSelected();
+        }
+
+        private void tree_DoubleClick(object sender, EventArgs e)
+        {
+            OpenSelected();
+        }
+
+        private void OpenSelected()
+        {
+            var node = tree.SelectedNode;
+            var path = node?.Tag as string;
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                TextureOpened?.Invoke(this, path);
+        }
+    }
+}

@@ -6,6 +6,12 @@ using Texel.Classes.Tools;
 using Texel.Classes.Input;
 using Texel.Classes;
 using Texel.Classes.UndoSystem;
+using Texel.Classes.Rendering;
+#if GPU_PREVIEW
+using OpenTK;
+using OpenTK.Graphics;
+using OpenTK.Graphics.OpenGL;
+#endif
 
 namespace Texel
 {
@@ -17,6 +23,16 @@ namespace Texel
         public Color[,] Pixels { get; private set; } = new Color[64, 64];
         public ToolMode CurrentTool { get; set; } = ToolMode.Pen;
         public bool ShowGrid { get; set; } = true;
+
+        // New: Render mode toggle
+        public bool UseGpuPreview { get; set; } = false;
+
+#if GPU_PREVIEW
+        private OpenTK.GLControl _gl;
+        private int _glTextureId;
+        private bool _glInitialized;
+#endif
+        private TextureBuffer _buffer;
 
         private UndoManager _undoManager = new UndoManager();
 
@@ -64,10 +80,46 @@ namespace Texel
                 { ToolMode.Line, new LineTool() },
                 { ToolMode.Eyedropper, new EyedropperTool() }
             };
+
+            // init buffer from Pixels
+            _buffer = new TextureBuffer(Pixels);
+            _buffer.Changed += () => {
+#if GPU_PREVIEW
+                if (_glInitialized) UploadTexture();
+#endif
+                Invalidate();
+            };
+
+            // optional: lazy init GL on handle created
+            this.HandleCreated += (s,e)=> {
+#if GPU_PREVIEW
+                if (UseGpuPreview) EnsureGl();
+#endif
+            };
+            this.Resize += (s,e)=> {
+#if GPU_PREVIEW
+                if (_glInitialized) _gl.MakeCurrent();
+#endif
+            };
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            if (UseGpuPreview)
+            {
+#if GPU_PREVIEW
+                EnsureGl();
+                UploadTexture(); // keep GPU texture in sync with CPU pixels
+                RenderGL();
+                // Draw UI overlays with GDI+ on top for now
+                DrawOverlaysGdi(e.Graphics);
+                return;
+#else
+                // Fallback if GPU_PREVIEW not compiled
+                // Continue with GDI+ rendering
+#endif
+            }
+            // CPU/GDI+ path (existing)
             Graphics g = e.Graphics;
             g.TranslateTransform(panOffset.X, panOffset.Y);
 
@@ -99,6 +151,12 @@ namespace Texel
                 }
             }
 
+            // previews & selection
+            draw_previews_and_selection(g);
+        }
+
+        private void draw_previews_and_selection(Graphics g)
+        {
             // Draw pixel-perfect preview for shapes while dragging
             if ((CurrentTool == ToolMode.Rectangle || CurrentTool == ToolMode.Ellipse || CurrentTool == ToolMode.Line)
                 && selectionStart.HasValue && selectionEnd.HasValue && isDragging)
@@ -136,6 +194,114 @@ namespace Texel
             }
         }
 
+#if GPU_PREVIEW
+        private void EnsureGl()
+        {
+            if (_gl != null && !_gl.IsDisposed) return;
+
+            // Create GLControl behind the GDI surface
+            _gl = new OpenTK.GLControl(new GraphicsMode(32,24,0,0))
+            {
+                Dock = DockStyle.Fill,
+                Visible = true
+            };
+            this.Controls.Add(_gl);
+            this.Controls.SetChildIndex(_gl,0); // put it behind overlays drawn by base
+            _gl.MakeCurrent();
+            _glInitialized = true;
+
+            InitGlResources();
+            UploadTexture();
+            _gl.Paint += (s,e)=> RenderGL();
+        }
+
+        private void InitGlResources()
+        {
+            if (_glTextureId !=0) GL.DeleteTexture(_glTextureId);
+            _glTextureId = GL.GenTexture();
+            GL.BindTexture(TextureTarget.Texture2D, _glTextureId);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)TextureWrapMode.ClampToEdge);
+            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)TextureWrapMode.ClampToEdge);
+        }
+
+        private void UploadTexture()
+        {
+            if (!_glInitialized) return;
+            GL.BindTexture(TextureTarget.Texture2D, _glTextureId);
+            var bytes = _buffer.ToBgraBytes();
+            GL.TexImage2D(TextureTarget.Texture2D,0, PixelInternalFormat.Rgba,
+                _buffer.Width, _buffer.Height,0,
+                OpenTK.Graphics.OpenGL.PixelFormat.Bgra,
+                PixelType.UnsignedByte, bytes);
+        }
+
+        private void RenderGL()
+        {
+            if (!_glInitialized) return;
+            _gl.MakeCurrent();
+            GL.Viewport(0,0, _gl.Width, _gl.Height);
+            GL.ClearColor(0.8f,0.8f,0.8f,1f);
+            GL.Clear(ClearBufferMask.ColorBufferBit);
+
+            // Simple nearest-neighbor scaled draw using immediate mode
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+            GL.Ortho(0, _gl.Width, _gl.Height,0, -1,1);
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadIdentity();
+
+            // Apply pan and scale via CellSize
+            GL.Translate(panOffset.X, panOffset.Y,0);
+            GL.Scale(CellSize, CellSize,1);
+
+            GL.Enable(EnableCap.Texture2D);
+            GL.BindTexture(TextureTarget.Texture2D, _glTextureId);
+
+            GL.Begin(PrimitiveType.Quads);
+            GL.TexCoord2(0,0); GL.Vertex2(0,0);
+            GL.TexCoord2(1,0); GL.Vertex2(_buffer.Width,0);
+            GL.TexCoord2(1,1); GL.Vertex2(_buffer.Width, _buffer.Height);
+            GL.TexCoord2(0,1); GL.Vertex2(0, _buffer.Height);
+            GL.End();
+
+            _gl.SwapBuffers();
+        }
+#endif
+
+        private void DrawOverlaysGdi(Graphics g)
+        {
+            g.TranslateTransform(panOffset.X, panOffset.Y);
+            draw_previews_and_selection(g);
+        }
+
+        // Helper: Clamp a point to the grid
+        private Point ClampToGrid(Point p)
+        {
+            int x = Math.Max(0, Math.Min(Pixels.GetLength(0) - 1, p.X));
+            int y = Math.Max(0, Math.Min(Pixels.GetLength(1) - 1, p.Y));
+            return new Point(x, y);
+        }
+
+        // Helper: Clamp a value to the grid
+        private int ClampX(int x) => Math.Max(0, Math.Min(Pixels.GetLength(0) - 1, x));
+        private int ClampY(int y) => Math.Max(0, Math.Min(Pixels.GetLength(1) - 1, y));
+
+        // Helper: Get the clamped selection rectangle in grid coordinates
+        private Rectangle GetClampedSelectionRect()
+        {
+            if (!selectionStart.HasValue || !selectionEnd.HasValue)
+                return Rectangle.Empty;
+
+            var (start, end) = GetAdjustedPoints(selectionStart.Value, selectionEnd.Value);
+            int x1 = ClampX(Math.Min(start.X, end.X));
+            int y1 = ClampY(Math.Min(start.Y, end.Y));
+            int x2 = ClampX(Math.Max(start.X, end.X));
+            int y2 = ClampY(Math.Max(start.Y, end.Y));
+            return Rectangle.FromLTRB(x1, y1, x2 + 1, y2 + 1); // +1 because Rectangle is exclusive at the end
+        }
+
         public void HandleMouseWheel(MouseEventArgs e)
         {
             try
@@ -167,32 +333,6 @@ namespace Texel
             {
                 MessageBox.Show("Zoom Error: " + ex.Message + "\n\n" + ex.StackTrace);
             }
-        }
-
-        // Helper: Clamp a point to the grid
-        private Point ClampToGrid(Point p)
-        {
-            int x = Math.Max(0, Math.Min(Pixels.GetLength(0) - 1, p.X));
-            int y = Math.Max(0, Math.Min(Pixels.GetLength(1) - 1, p.Y));
-            return new Point(x, y);
-        }
-
-        // Helper: Clamp a value to the grid
-        private int ClampX(int x) => Math.Max(0, Math.Min(Pixels.GetLength(0) - 1, x));
-        private int ClampY(int y) => Math.Max(0, Math.Min(Pixels.GetLength(1) - 1, y));
-
-        // Helper: Get the clamped selection rectangle in grid coordinates
-        private Rectangle GetClampedSelectionRect()
-        {
-            if (!selectionStart.HasValue || !selectionEnd.HasValue)
-                return Rectangle.Empty;
-
-            var (start, end) = GetAdjustedPoints(selectionStart.Value, selectionEnd.Value);
-            int x1 = ClampX(Math.Min(start.X, end.X));
-            int y1 = ClampY(Math.Min(start.Y, end.Y));
-            int x2 = ClampX(Math.Max(start.X, end.X));
-            int y2 = ClampY(Math.Max(start.Y, end.Y));
-            return Rectangle.FromLTRB(x1, y1, x2 + 1, y2 + 1); // +1 because Rectangle is exclusive at the end
         }
 
         public void HandleMouseDown(MouseEventArgs e)
@@ -589,7 +729,7 @@ namespace Texel
                 // Use the existing pixels (for undo operation)
                 Pixels = existingPixels;
             }
-
+            _buffer.Replace(Pixels);
             Invalidate();
         }
 
@@ -601,11 +741,13 @@ namespace Texel
         public void Undo()
         {
             _undoManager.Undo(this);
+            _buffer.Replace(Pixels);
         }
 
         public void Redo()
         {
             _undoManager.Redo(this);
+            _buffer.Replace(Pixels);
         }
 
         public bool CanUndo => _undoManager.CanUndo;
@@ -680,6 +822,7 @@ namespace Texel
                     }
 
                     _undoManager.PushAction(pixelAction);
+                    _buffer.Replace(Pixels);
                     Invalidate();
                 }
             }
@@ -739,6 +882,7 @@ namespace Texel
                 for (int y = sel.Top; y < sel.Bottom; y++)
                     Pixels[x, y] = Color.Transparent;
 
+            _buffer.Replace(Pixels);
             ClearSelection();
             Invalidate();
         }

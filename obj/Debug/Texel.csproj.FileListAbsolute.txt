@@ -59,3 +59,7 @@ G:\Texel\Texel\obj\Debug\Texel.csproj.Up2Date
 G:\Texel\Texel\obj\Debug\Texel.exe
 G:\Texel\Texel\obj\Debug\Texel.pdb
 G:\Texel\Texel\bin\Debug\Data\minecraft_versions.json
+G:\Texel\Texel\obj\Debug\Texel.exe.config
+G:\Texel\Texel\bin\Debug\OpenTK.dll
+G:\Texel\Texel\bin\Debug\OpenTK.pdb
+G:\Texel\Texel\bin\Debug\OpenTK.xml
