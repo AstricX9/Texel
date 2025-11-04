@@ -72,11 +72,11 @@ namespace Texel.Dialogs
             }
             
             // Load default resolution
-            cboDefaultResolution.Items.AddRange(new object[] {16,32,64,128,256,512,1024 });
+            cboDefaultResolution.Items.AddRange(new object[] { 16, 32, 64, 128, 256, 512 });
             cboDefaultResolution.SelectedItem = _settings.DefaultResolution;
-            if (cboDefaultResolution.SelectedIndex == -1 && cboDefaultResolution.Items.Count >0)
+            if (cboDefaultResolution.SelectedIndex == -1 && cboDefaultResolution.Items.Count > 0)
             {
-                cboDefaultResolution.SelectedIndex =0;
+                cboDefaultResolution.SelectedIndex = 0;
             }
             
             // Auto save settings

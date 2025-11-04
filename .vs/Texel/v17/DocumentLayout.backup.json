@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:usercontrols\\toolwindowcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|c:\\users\\danie\\source\\repos\\texel\\dialogs\\settingsdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|C:\\Users\\danie\\source\\repos\\Texel\\dialogs\\settingsdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DC8FD55-5523-4807-8AB3-8FF15882D3C8}|Texel.csproj|solutionrelative:dialogs\\settingsdialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -198,7 +198,7 @@
               "RelativeDocumentMoniker": "BenchmarkSuite1\\CheckerboardBenchmarks.cs",
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\BenchmarkSuite1\\CheckerboardBenchmarks.cs",
               "RelativeToolTip": "BenchmarkSuite1\\CheckerboardBenchmarks.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAowBEAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-04T02:35:04.968Z",
               "EditorCaption": ""
@@ -212,8 +212,7 @@
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\UserControls\\PixelCanvasControl.cs [Design]",
               "RelativeToolTip": "UserControls\\PixelCanvasControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:12:45.188Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-19T06:12:45.188Z"
             },
             {
               "$type": "Document",
@@ -225,8 +224,7 @@
               "RelativeToolTip": "UserControls\\PixelCanvasControl.cs",
               "ViewState": "AgIAALADAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:12:49.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T06:12:49.985Z"
             },
             {
               "$type": "Document",
@@ -237,8 +235,7 @@
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\UserControls\\ToolWindowControl.cs [Design]",
               "RelativeToolTip": "UserControls\\ToolWindowControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T08:20:51.572Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-19T08:20:51.572Z"
             },
             {
               "$type": "Document",
@@ -248,7 +245,7 @@
               "RelativeDocumentMoniker": "Dialogs\\SettingsDialog.cs",
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\SettingsDialog.cs",
               "RelativeToolTip": "Dialogs\\SettingsDialog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIgAAAAAAAAAAIBJwIoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T23:58:36.222Z",
               "EditorCaption": ""
@@ -364,7 +361,8 @@
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\NewPackDialog.cs [Design]",
               "RelativeToolTip": "Dialogs\\NewPackDialog.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:32:45.413Z"
+              "WhenOpened": "2025-06-19T23:32:45.413Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -544,8 +542,7 @@
               "RelativeToolTip": "UserControls\\ToolWindowControl.Designer.cs",
               "ViewState": "AgIAAKwAAAAAAAAAAEBVwLAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:48:50.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T23:48:50.925Z"
             },
             {
               "$type": "Document",
@@ -579,9 +576,10 @@
               "RelativeDocumentMoniker": "Dialogs\\NewPackDialog.cs",
               "ToolTip": "C:\\Users\\danie\\source\\repos\\Texel\\Dialogs\\NewPackDialog.cs",
               "RelativeToolTip": "Dialogs\\NewPackDialog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMgAAAAAAAAAAABBwMAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:34:29.567Z"
+              "WhenOpened": "2025-06-19T23:34:29.567Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -593,7 +591,8 @@
               "RelativeToolTip": "Dialogs\\NewPackDialog.Designer.cs",
               "ViewState": "AgIAAGwAAAAAAAAAAAAowHQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T23:32:55.734Z"
+              "WhenOpened": "2025-06-19T23:32:55.734Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -689,8 +688,7 @@
               "RelativeToolTip": "UserControls\\ToolWindowControl.cs",
               "ViewState": "AgIAADEAAAAAAAAAAABRwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:08:14.458Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T09:08:14.458Z"
             },
             {
               "$type": "Document",

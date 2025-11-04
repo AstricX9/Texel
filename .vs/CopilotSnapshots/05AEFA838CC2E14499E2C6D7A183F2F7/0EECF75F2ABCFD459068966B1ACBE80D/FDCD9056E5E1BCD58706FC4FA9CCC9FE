@@ -23,7 +23,7 @@ namespace Texel.Dialogs
             _projectService = projectService;
 
             // Populate resolution dropdown
-            cboResolution.Items.AddRange(new object[] { 16, 32, 64, 128, 256, 512, 1024 });
+            cboResolution.Items.AddRange(new object[] { 16, 32, 64, 128, 256, 512 });
             cboResolution.SelectedIndex = 0;
 
             // Set default location
