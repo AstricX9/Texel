@@ -15,3 +15,10 @@ C:\Users\danie\source\repos\Texel\obj\Release\Texel.csproj.Up2Date
 C:\Users\danie\source\repos\Texel\obj\Release\Texel.exe
 C:\Users\danie\source\repos\Texel\obj\Release\Texel.pdb
 C:\Users\danie\source\repos\Texel\obj\Release\Texel.exe.config
+C:\Users\danie\source\repos\Texel\bin\Release\Data\minecraft_versions.json
+C:\Users\danie\source\repos\Texel\bin\Release\OpenTK.dll
+C:\Users\danie\source\repos\Texel\bin\Release\OpenTK.GLControl.dll
+C:\Users\danie\source\repos\Texel\bin\Release\OpenTK.pdb
+C:\Users\danie\source\repos\Texel\bin\Release\OpenTK.xml
+C:\Users\danie\source\repos\Texel\bin\Release\OpenTK.GLControl.pdb
+C:\Users\danie\source\repos\Texel\bin\Release\OpenTK.GLControl.xml
